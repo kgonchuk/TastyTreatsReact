@@ -7,6 +7,7 @@ display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  padding: 44px 100px;
 `;
 export const LinkList = styled.ul`
   list-style: none;

@@ -4,11 +4,19 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding: 44px 100px;
-`;
+ 
 
-export const Main = styled.main`
-  flex: 1;
-  padding: 20px;
+   @media screen and (min-width: 375px) {
+    width: 375px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 1280px;
+    //  padding: 44px 100px;
+  }
 `;
 

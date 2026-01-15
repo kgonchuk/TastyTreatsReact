@@ -1,7 +1,10 @@
+import { HomePageContainer } from "./HomePage.styled";
+import { Hero } from "../../components/Hero/Hero";
+
 export const HomePage = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
+   <HomePageContainer>
+    <Hero />
+   </HomePageContainer>
   );
 }

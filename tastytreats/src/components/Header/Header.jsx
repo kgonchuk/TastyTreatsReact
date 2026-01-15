@@ -1,4 +1,4 @@
-import { CartIcon, CartLink, FavoriteLink, HeaderBtnBox, HeaderContainer, HomeLink, LinkItem, LinkList, NavLinks, SwitcherButton, SwitcherContainer, Title, TitleLink } from "./Header.styled";
+import { CartIcon, CartLink, FavoriteLink, HeaderBtnBox, HeaderContainer, HomeLink, LinkItem, LinkList, NavLinks, TitleLink } from "./Header.styled";
 import sprite from '../../assets/sprite.svg';
 import { ToggleSwitch } from "../ToggleSwitch/ToggleSwitch";
 
