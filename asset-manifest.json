@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/TastyTreatsReact/static/css/main.841f7233.css",
+    "main.js": "/TastyTreatsReact/static/js/main.40b356b2.js",
+    "static/media/bigcard2.png": "/TastyTreatsReact/static/media/bigcard2.c1e6398cf868f9d19605.png",
+    "static/media/bigCard.png": "/TastyTreatsReact/static/media/bigCard.4d2856318e78979b1f28.png",
+    "static/media/bigcard3.png": "/TastyTreatsReact/static/media/bigcard3.e2bb6e27010274aa23c5.png",
+    "static/media/card2.png": "/TastyTreatsReact/static/media/card2.71e5b38b497e6e6b535c.png",
+    "static/media/card1.png": "/TastyTreatsReact/static/media/card1.1a7165ec1d72d9cfbd1d.png",
+    "static/media/card3.png": "/TastyTreatsReact/static/media/card3.938e85cb332308442701.png",
+    "static/media/shef1.png": "/TastyTreatsReact/static/media/shef1.a9c9fac76fdf8c44f3bd.png",
+    "static/media/shef3.png": "/TastyTreatsReact/static/media/shef3.6a2fff12f10fbd622ca2.png",
+    "static/media/shef2.png": "/TastyTreatsReact/static/media/shef2.28c813b4d32b309de426.png",
+    "static/media/sprite.svg": "/TastyTreatsReact/static/media/sprite.e9e8ed8e06d73649cb41f05c4c657c76.svg",
+    "index.html": "/TastyTreatsReact/index.html",
+    "main.841f7233.css.map": "/TastyTreatsReact/static/css/main.841f7233.css.map",
+    "main.40b356b2.js.map": "/TastyTreatsReact/static/js/main.40b356b2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.841f7233.css",
+    "static/js/main.40b356b2.js"
+  ]
+}
