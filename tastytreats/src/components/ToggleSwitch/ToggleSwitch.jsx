@@ -22,7 +22,7 @@ export const ToggleSwitch = ({ label }) => {
         {/* The label acts as the visible switch UI */}
         <StyledLabel htmlFor={label} className="label">
           <Inner className="inner" />
-     <Switch isChecked={isChecked} />
+     <Switch ischecked={isChecked} />
 
         </StyledLabel >
        

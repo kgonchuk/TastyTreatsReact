@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RecipeSwiper, { Slide } from "../SwiperSlide/SwiperSlide";
 import { HeroButton, HeroContainer, HeroSlideBlock, HeroSubtitle, HeroTextBlock, HeroTitle, HeroWrapper } from "./Hero.styled";
 import { ModalOrder } from "../ModalOrder/ModalOrder";
+
+
+
 
 export const Hero = () => {
  const [openModal, setOpenModal] = useState(false);
      const handlModalOpen = () => {
     setOpenModal(true);
   };
+
   return (
     <HeroContainer>
         <HeroWrapper>

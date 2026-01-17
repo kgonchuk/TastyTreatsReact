@@ -27,11 +27,11 @@ const recipes = [
   { id: 2, image: card1, variant: "large" },
   { id: 3, image: bigcard1, variant: "large" },
   { id: 4, image: chef2, variant: "small" },
-  { id: 2, image: card2, variant: "large" },
-  { id: 3, image: bigcard2, variant: "large" },
-  { id: 4, image: chef3, variant: "small" },
-  { id: 2, image: card3, variant: "large" },
-  { id: 3, image: bigcard3, variant: "large" },
+  { id: 5, image: card2, variant: "large" },
+  { id: 6, image: bigcard2, variant: "large" },
+  { id: 7, image: chef3, variant: "small" },
+  { id: 8, image: card3, variant: "large" },
+  { id: 9, image: bigcard3, variant: "large" },
 ];
 
 const RecipeSwiper = () => {

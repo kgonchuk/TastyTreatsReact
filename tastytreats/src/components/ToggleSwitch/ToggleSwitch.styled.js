@@ -82,6 +82,6 @@ left: 0;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 2px 5px rgba(243, 243, 243, 0.25);
 pointer-events: none;
-transform: ${props => (props.isChecked ? "translateX(28px)" : "translateX(0)")};
+transform: ${props => (props.ischecked ? "translateX(28px)" : "translateX(0)")};
 
 `;

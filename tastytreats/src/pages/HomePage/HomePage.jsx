@@ -1,11 +1,15 @@
-import { HomePageContainer } from "./HomePage.styled";
+import { HomePageContainer, MainSection } from "./HomePage.styled";
 import { Hero } from "../../components/Hero/Hero";
-import { ModalOrder } from "../../components/ModalOrder/ModalOrder";
+import { PopupularRecipes } from "../../components/PopularRecipes/PopularRecipes";
+
 
 export const HomePage = () => {
   return (
    <HomePageContainer>
     <Hero />
+    <MainSection>
+     <PopupularRecipes />
+    </MainSection>
 
    </HomePageContainer>
   );
