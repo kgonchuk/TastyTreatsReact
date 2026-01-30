@@ -26,7 +26,7 @@ export const PopupularRecipes = () => {
 {items.map(recipe => (
 <PopularRecipesItem key={recipe._id} recipe={recipe} />
 ))}
-
+      
      
     </RecipeCard>
 

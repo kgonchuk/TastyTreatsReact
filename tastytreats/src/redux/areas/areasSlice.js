@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCategories } from './operations';
+import { fetchAreaRecipes } from '../operations';
 
-const categoriesSlice = createSlice({
-  name: 'categories',
+const areasSlice = createSlice({
+  name: 'areas',
   initialState: {
     items: [],
     isLoading: false,
@@ -10,19 +10,18 @@ const categoriesSlice = createSlice({
   },
   extraReducers: builder => {
     builder
-      .addCase(fetchCategories.pending, state => {
+      .addCase(fetchAreaRecipes.pending, state => {
         state.isLoading = true;
       })
-      .addCase(fetchCategories.fulfilled, (state, action) => {
+      .addCase(fetchAreaRecipes.fulfilled, (state, action) => {
         state.isLoading = false;
         state.items = action.payload;
       })
-      .addCase(fetchCategories.rejected, (state, action) => {
+      .addCase(fetchAreaRecipes.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
-      })
-      
+      });
   },
 });
 
-export const categoriesReducer = categoriesSlice.reducer;
+export default areasSlice.reducer;

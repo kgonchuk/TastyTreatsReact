@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCategories } from './operations';
+import { findMasterClasses } from '../operations';
 
-const categoriesSlice = createSlice({
-  name: 'categories',
+const eventsSlice = createSlice({
+  name: 'events',
   initialState: {
     items: [],
     isLoading: false,
@@ -10,19 +10,18 @@ const categoriesSlice = createSlice({
   },
   extraReducers: builder => {
     builder
-      .addCase(fetchCategories.pending, state => {
+      .addCase(findMasterClasses.pending, state => {
         state.isLoading = true;
       })
-      .addCase(fetchCategories.fulfilled, (state, action) => {
+      .addCase(findMasterClasses.fulfilled, (state, action) => {
         state.isLoading = false;
         state.items = action.payload;
       })
-      .addCase(fetchCategories.rejected, (state, action) => {
+      .addCase(findMasterClasses.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
-      })
-      
+      });
   },
 });
 
-export const categoriesReducer = categoriesSlice.reducer;
+export default eventsSlice.reducer;
