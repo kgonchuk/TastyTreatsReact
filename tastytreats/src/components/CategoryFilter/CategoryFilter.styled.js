@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+margin-top:25px;
 `;
 
 export const SearchInput = styled.input`
@@ -21,12 +22,12 @@ export const SearchInput = styled.input`
 `;
 
 export const AllButton = styled.button`
-  padding: 10px;
-  border-radius: 24px;
+  padding: 14px 28px;
+  border-radius: 15px;
   border: 1px solid ${color.grayBorder};
   background-color: ${({ active }) =>
-    active ? color.greenPrimary : "transparent"};
-  color: ${({ active }) => (active ? "#fff" : color.greySecondary)};
+    active ? "transparent" : color.greenPrimary};
+  color: ${({ active }) => (active ? color.greySecondary : "#FFFFFF")};
   cursor: pointer;
 `;
 
@@ -48,3 +49,5 @@ export const CategoryButton = styled.li`
     color: ${color.greenPrimary};
   }
 `;
+
+

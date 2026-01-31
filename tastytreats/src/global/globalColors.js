@@ -6,6 +6,7 @@ const color = {
   greyText:"rgba(5, 5, 5, 0.8)",
   grayBorder: "rgba(5, 5, 5, 0.2)",
   greyInput: "rgba(5, 5, 5, 0.3)",
+  black:"rgba(5, 5, 5, 0.8)"
 
   
 };

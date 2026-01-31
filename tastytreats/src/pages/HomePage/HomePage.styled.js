@@ -11,8 +11,11 @@ export const MainSection = styled.section`
 export const RecipesListContainer = styled.div`
 display: flex;
 
-gap: 32px;
+gap: 64px;
 `;
 export const RecipesWrap = styled.div`
+
+`;
+export const FilterContainer=styled.div`
 
 `;

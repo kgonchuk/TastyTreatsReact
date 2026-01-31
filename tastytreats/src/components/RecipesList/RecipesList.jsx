@@ -7,7 +7,7 @@ import { RecipesItem } from "../RecipesItem/RecipesItem";
 export const RecipesList = () => {
   const dispatch = useDispatch();
 
-  const { category, area, ingredient } = useSelector(
+  const { category, area, ingredient, time, title } = useSelector(
     state => state.recipes.filters
   );
   const page = useSelector(state => state.recipes.page);
@@ -19,11 +19,13 @@ export const RecipesList = () => {
         category,
         area,
         ingredient,
+        time,
+        title,
         page,
         limit: 9,
       })
     );
-  }, [dispatch, category, area, ingredient, page]);
+  }, [dispatch, category, area, ingredient,time, title, page]);
 
   if (isLoadingRecipes) return <p>Loading...</p>;
 

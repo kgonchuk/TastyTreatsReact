@@ -1,12 +1,13 @@
 import styled from "styled-components";
 export const RecipesListContainer = styled.div`
-
+margin-top: 14px;
 `;      
 
 export const RecipesWrap = styled.div`
 display: grid;
-  grid-template-columns: repeat(3, 1fr); 
+grid-template-columns: repeat(3, 250px);
   gap: 16px; 
+ max-width: 782px; 
   width: 100%;
 
 

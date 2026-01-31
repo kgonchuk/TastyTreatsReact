@@ -8,7 +8,7 @@ import color from '../../global/globalColors';
 export const RecipeCard = styled.article`
 padding: 16px;
 position: relative;
-  width: 250px;
+  width: 218px;
   height: 287px;
   border-radius: 12px;
   overflow: hidden;
@@ -38,6 +38,7 @@ top: 12px;
 right: 12px;
 width: 32px;
 height: 32px;
+
 z-index: 2;
 cursor: pointer;
 `;

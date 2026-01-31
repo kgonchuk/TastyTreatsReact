@@ -2,20 +2,30 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import {
   Wrapper,
-  SearchInput,
   CategoriesList,
   CategoryButton,
   AllButton,
+  CategoryInputWrapper,
+  SearchInput,
+  AreaButton,
 } from './CategoryFilter.styled';
+import { useDispatch } from 'react-redux';
+import { setCategory } from '../../redux/recipes/recipesSlice';
 
 const API_URL =
   'https://tasty-treats-backend.p.goit.global/api/categories';
 
-export const CategoriesFilter = ({ onChange }) => {
+export const CategoriesFilter = () => {
   const [categories, setCategories] = useState([]);
   const [active, setActive] = useState('All');
-  const [search, setSearch] = useState('');
 
+  const dispatch = useDispatch();
+
+  const handleSelect = value => {
+    const categoryValue = value === 'All' ? '' : value;
+    setActive(value);
+    dispatch(setCategory(categoryValue));
+  };
   useEffect(() => {
     const fetchCategories = async () => {
       const { data } = await axios.get(API_URL);
@@ -25,35 +35,21 @@ export const CategoriesFilter = ({ onChange }) => {
     fetchCategories();
   }, []);
 
-  const filteredCategories = categories.filter(cat =>
-    cat.name.toLowerCase().includes(search.toLowerCase())
-  );
-
-  const handleSelect = value => {
-    setActive(value);
-    onChange?.(value === 'All' ? null : value);
-  };
 
   return (
     <Wrapper>
-      <SearchInput
-        type="text"
-        placeholder="Search"
-        value={search}
-        onChange={e => setSearch(e.target.value)}
-      />
 
-      <AllButton
-        active={active === 'All'}
-        onClick={() => handleSelect('All')}
+        <AllButton
+        active={active === 'All'} onClick={() => handleSelect('All')}
       >
         All categories
       </AllButton>
+       
 
       <CategoriesList>
-        {filteredCategories.map(({ name }) => (
+       {categories.map(({ name }) => (
           <CategoryButton
-            key={name}
+           key={name}
             active={active === name}
             onClick={() => handleSelect(name)}
           >
