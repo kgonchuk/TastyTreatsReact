@@ -6,30 +6,21 @@ import color from '../../global/globalColors';
 
 
 export const RecipeCard = styled.article`
-padding: 16px;
-position: relative;
+  padding: 16px;
+  position: relative;
   width: 218px;
   height: 287px;
   border-radius: 12px;
-  overflow: hidden;
-  background-image: url(${props => props.backgroundImage});
+
+background-image: url(${props => props.$backgroundImage});
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   cursor: pointer;
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(5, 5, 5, 0) 0%,
-      rgba(5, 5, 5, 0.6) 100%
-    );
-    z-index: 1;
-  }
+  
+
 `;
 
 export const FavoriteIconWrap = styled.div`
@@ -99,7 +90,7 @@ export const RecipeRatingStar = styled.svg`
 width: 12px;
 height: 12px;
 margin-left: 4px;
-// fill: #000000;
+
 fill: #FFC107;
 `;    
 

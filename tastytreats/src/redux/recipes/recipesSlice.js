@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchRecipes, getPopularRecipes } from '../operations';
+import { fetchRecipes, findRecipes, getPopularRecipes } from '../operations';
 
 const recipesSlice = createSlice({
   name: 'recipes',
   initialState: {
     items: [],
     popular: [],
+    activeRecipe: null,
     filters: {
       category: null,
       area: null,
@@ -48,6 +49,9 @@ const recipesSlice = createSlice({
       state.filters = { category: null, area: null, ingredient: null,time: null, title: "" };
       state.page = 1;
     },
+    clearActiveRecipe(state) {
+  state.activeRecipe = null;
+}
   },
 
   extraReducers: builder => {
@@ -75,6 +79,18 @@ const recipesSlice = createSlice({
 .addCase(getPopularRecipes.rejected, (state, action) => {
   state.isLoadingPopular = false;
   state.error = action.payload;
+})
+.addCase(findRecipes.pending, state => {
+  state.isLoadingRecipes = true;
+  state.activeRecipe = null; // Очищуємо попередній рецепт
+})
+.addCase(findRecipes.fulfilled, (state, action) => {
+  state.isLoadingRecipes = false;
+  state.activeRecipe = action.payload; // Зберігаємо дані конкретної страви
+})
+.addCase(findRecipes.rejected, (state, action) => {
+  state.isLoadingRecipes = false;
+  state.error = action.payload;
 });
   },
 });
@@ -87,6 +103,7 @@ export const {
   resetFilters,
   setTime,
   setSearch,
+  clearActiveRecipe
 } = recipesSlice.actions;
 
 export default recipesSlice.reducer;

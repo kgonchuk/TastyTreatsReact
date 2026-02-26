@@ -1,12 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { RecipesListContainer, RecipesWrap } from "./RecipesList.styled";
-import { fetchRecipes } from "../../redux/operations";
+import { fetchRecipes, findRecipes } from "../../redux/operations";
 import { RecipesItem } from "../RecipesItem/RecipesItem";
 
 export const RecipesList = () => {
   const dispatch = useDispatch();
 
+  
   const { category, area, ingredient, time, title } = useSelector(
     state => state.recipes.filters
   );
@@ -24,8 +25,11 @@ export const RecipesList = () => {
         page,
         limit: 9,
       })
+    
     );
   }, [dispatch, category, area, ingredient,time, title, page]);
+
+  
 
   if (isLoadingRecipes) return <p>Loading...</p>;
 
@@ -36,6 +40,7 @@ export const RecipesList = () => {
           <RecipesItem key={recipe._id} recipe={recipe} />
         ))}
       </RecipesWrap>
+      
     </RecipesListContainer>
   );
 };
