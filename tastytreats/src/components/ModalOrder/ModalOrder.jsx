@@ -2,6 +2,7 @@ import { CloseButton, CloseIcon, Input, Label, ModalBody, ModalContent, ModalOve
 import sprite from '../../assets/sprite.svg';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import { useEffect } from "react";
 
  const orderValidationSchema = Yup.object().shape({
   name: Yup.string().nullable(),
@@ -11,8 +12,27 @@ import * as Yup from 'yup';
 });
 
 export const ModalOrder = ({closeModal}) => {
+
+   useEffect(() => {
+      const handleCloseOnKeydown = e => {
+        if (e.key === 'Escape') {
+          closeModal();
+        }
+      };
+      window.addEventListener('keydown', handleCloseOnKeydown);
+  
+      return () => {
+        window.removeEventListener('keydown', handleCloseOnKeydown);
+      };
+    }, [closeModal]);
+  
+    const handleCloseOnBackdrop = e => {
+      if (e.target === e.currentTarget) {
+        closeModal();
+      }
+    };
   return (
-   <ModalOverlay>
+   <ModalOverlay  onClick={handleCloseOnBackdrop}>
     <ModalContent>
         <CloseButton onClick={closeModal}>
         <CloseIcon><use  href={`${sprite}#icon-close`}  /></CloseIcon></CloseButton>

@@ -2,12 +2,23 @@ import { AddButton, ButtonWrapper, CloseButton, IngredientItem, IngredientsList,
 import sprite from '../../assets/sprite.svg';
 import { useDispatch, useSelector } from "react-redux";
 import ReactStars from "react-stars";
+import { useState } from "react";
+import { ModalRating } from "../ModalRating/ModalRating";
 
 
 
 
 export const ModalRecipe = ({recipedInfo, onClose }) => {
+      const [openModal, setOpenModal] = useState(false);
   const{ title, rating, time, instructions, category} = recipedInfo;
+
+  const [selectedRecipeId, setSelectedRecipeId] = useState(null);
+const handlModalOpen = (e) => {
+  if (e) e.stopPropagation();
+  setSelectedRecipeId(recipedInfo._id);
+  setOpenModal(true);
+};
+
 
   const ingredientsMap = useSelector(state =>
   state.ingredients.items.reduce((acc, item) => {
@@ -80,9 +91,13 @@ const roundToHalf = (num) => Math.round(num * 2) / 2;
           <InstructionText>{instructions}</InstructionText>
         </RecipeDetails>
    <ButtonWrapper>
-    <AddButton>Add to favorite</AddButton>
-    <RatingButton>Give a rating</RatingButton>
+    <AddButton type="button" >Add to favorite</AddButton>
+    <RatingButton type="button" onClick={handlModalOpen}>Give a rating</RatingButton>
    </ButtonWrapper>
+   {openModal && <ModalRating 
+    onClose={() => setOpenModal(false)} 
+    recipeId={selectedRecipeId} 
+  />}
       </ModalContent>
     </ModalOverlay>
   );
