@@ -6,10 +6,11 @@ export const HeroContainer = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-margin-top: 100px;       
-margin-bottom: 100px;
+// margin-top: 100px;     
+margin-bottom: 100px;  
 
-padding: 0 0 0 100px;
+
+
 
 `;
 

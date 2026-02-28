@@ -117,7 +117,7 @@ export const IngredientItem = styled.li`
   font-size: 14px;
   color: ${color.blackPrimary};
  border-bottom: 1px solid #e3e3e3;
-
+list-style: none;
   span:last-child {
     color: ${color.greySecondary}; 
   }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HomePageContainer = styled.div`
-padding:100px;
+padding:0 0 0 100px;
 
 `;
 

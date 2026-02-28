@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FavoritePageContainer = styled.div`
-  padding: 20px;
+  padding: 0 0 0 100px;
 `;
 
 export const FavoriteImg= styled.img`
