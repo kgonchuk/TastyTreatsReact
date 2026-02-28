@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { RecipesListContainer, RecipesWrap } from "./RecipesList.styled";
 import { fetchRecipes} from "../../redux/operations";
 import { RecipesItem } from "../RecipesItem/RecipesItem";
+import  {Pagination}  from "../Pagination/Pagination";
+import { setPage } from "../../redux/recipes/recipesSlice";
 
 export const RecipesList = () => {
   const dispatch = useDispatch();
@@ -12,7 +14,7 @@ export const RecipesList = () => {
     state => state.recipes.filters
   );
   const page = useSelector(state => state.recipes.page);
-  const { items, isLoadingRecipes } = useSelector(state => state.recipes);
+  const { items, isLoadingRecipes, totalPages } = useSelector(state => state.recipes);
 
   useEffect(() => {
     dispatch(
@@ -40,7 +42,11 @@ export const RecipesList = () => {
           <RecipesItem key={recipe._id} recipe={recipe} />
         ))}
       </RecipesWrap>
-      
+    <Pagination
+  totalPages={totalPages}
+  currentPage={page}
+  onPageChange={(newPage) => dispatch(setPage(newPage))}
+/>
     </RecipesListContainer>
   );
 };

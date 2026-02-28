@@ -16,7 +16,7 @@ const recipesSlice = createSlice({
     },
     page: 1,
     totalPages: 1,
-   isLoadingRecipes: false,
+  isLoadingRecipes: false,
   isLoadingPopular: false,
     error: null,
   },
