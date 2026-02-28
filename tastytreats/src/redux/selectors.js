@@ -12,7 +12,22 @@ export const selectRecipesParams = createSelector(
   })
 );
 
+export const selectCategories = state => state.categories.items;
+export const selectFavoriteCategory = state =>
+  state.favorites.selectedCategory;
 
+export const selectFavorites=state => state.favorites.favorites;
+
+export const selectFilteredFavorites = createSelector(
+  [selectFavorites, selectFavoriteCategory],
+  (favorites, category) => {
+    if (category === "All") return favorites;
+
+    return favorites.filter(
+      recipe => recipe.category === category
+    );
+  }
+);
 
 
 export const selectPopularRecipes = state =>

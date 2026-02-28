@@ -1,13 +1,17 @@
-import { FavoriteIcon, FavoriteIconWrap, RecipeBtn, RecipeCard, RecipeDescription, RecipeFooter, RecipeRatingStar, RecipeRatingValue, RecipeRatingWrap, RecipeTitle } from "./RecipesItem.styled"
+import { ButtonsWrapper, EmptyHeartIcon, FavoriteBtn, FavoriteIcon, FavoriteIconWrap, FillHeartIcon, RecipeBtn, RecipeCard, RecipeDescription, RecipeFooter, RecipeRatingStar, RecipeRatingValue, RecipeRatingWrap, RecipeTitle } from "./RecipesItem.styled"
 import sprite from '../../assets/sprite.svg';
 import { useEffect, useState } from "react";
 import { ModalRecipe } from "../ModalRecipe/ModalRecipe";
 import ReactStars from "react-stars";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleFavorite } from "../../redux/favorites/favoritesSlice";
+import Notiflix from 'notiflix';
 
 
 
 
 export const RecipesItem = ({recipe}) => {
+const dispatch = useDispatch();
 const { _id, title, description, preview, rating} = recipe;
 const [openModal, setOpenModal] = useState(false);
 
@@ -22,17 +26,31 @@ const handleCloseModal = () => {
 };
 const roundToHalf = (num) => Math.round(num * 2) / 2;
 
+   const isFavorite = useSelector((state) =>
+    state.favorites.favorites.some(
+      (favorite) => favorite._id === recipe._id
+    )
+  );
+ const toggleFavorites = () => {
+    dispatch(toggleFavorite(recipe));
+   };
+ 
 
     return (
       <>
        <li key={_id}>
        <RecipeCard  $backgroundImage={preview}>
-        <FavoriteIconWrap>
-        <FavoriteIcon >
-<use  href={`${sprite}#heart`}  />
-</FavoriteIcon>
 
-        </FavoriteIconWrap>
+     
+
+              <FavoriteIconWrap>
+            <FavoriteBtn onClick={toggleFavorites}>
+  {isFavorite ? <FillHeartIcon /> : <EmptyHeartIcon />}
+</FavoriteBtn>
+
+
+          </FavoriteIconWrap>
+
        <RecipeTitle>{title} </RecipeTitle>
        <RecipeDescription>{description}</RecipeDescription>
     <RecipeFooter>

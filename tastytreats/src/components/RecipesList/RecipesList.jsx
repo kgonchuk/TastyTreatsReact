@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { RecipesListContainer, RecipesWrap } from "./RecipesList.styled";
-import { fetchRecipes, findRecipes } from "../../redux/operations";
+import { fetchRecipes} from "../../redux/operations";
 import { RecipesItem } from "../RecipesItem/RecipesItem";
 
 export const RecipesList = () => {

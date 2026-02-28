@@ -32,7 +32,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   recipes: recipesReducer,
-  popularRecipes: popularRecipesReducer, // 👈 ВАЖЛИВО
+  popularRecipes: popularRecipesReducer, 
   categories: categoriesReducer,
   areas: areasReducer,
   ingredients: ingredientsReducer,

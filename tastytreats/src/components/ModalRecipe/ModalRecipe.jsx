@@ -4,20 +4,22 @@ import { useDispatch, useSelector } from "react-redux";
 import ReactStars from "react-stars";
 import { useState } from "react";
 import { ModalRating } from "../ModalRating/ModalRating";
+import { toggleFavorite } from "../../redux/favorites/favoritesSlice";
 
 
 
 
 export const ModalRecipe = ({recipedInfo, onClose }) => {
-      const [openModal, setOpenModal] = useState(false);
+  const dispatch = useDispatch();
+  const [openModal, setOpenModal] = useState(false);
   const{ title, rating, time, instructions, category} = recipedInfo;
 
   const [selectedRecipeId, setSelectedRecipeId] = useState(null);
-const handlModalOpen = (e) => {
-  if (e) e.stopPropagation();
-  setSelectedRecipeId(recipedInfo._id);
-  setOpenModal(true);
-};
+// const handlModalOpen = (e) => {
+//   if (e) e.stopPropagation();
+//   setSelectedRecipeId(recipedInfo._id);
+//   setOpenModal(true);
+// };
 
 
   const ingredientsMap = useSelector(state =>
@@ -32,6 +34,15 @@ const handlModalOpen = (e) => {
     return url.replace("watch?v=", "embed/");
   };
 const roundToHalf = (num) => Math.round(num * 2) / 2;
+
+ const isFavorite = useSelector((state) =>
+    state.favorites.favorites.some(
+      (favorite) => favorite._id === recipedInfo._id
+    )
+  );
+const toggleFavorites = () => {
+   dispatch(toggleFavorite(recipedInfo));
+  };
 
 
   return (
@@ -90,10 +101,19 @@ const roundToHalf = (num) => Math.round(num * 2) / 2;
      
           <InstructionText>{instructions}</InstructionText>
         </RecipeDetails>
+       
    <ButtonWrapper>
-    <AddButton type="button" >Add to favorite</AddButton>
-    <RatingButton type="button" onClick={handlModalOpen}>Give a rating</RatingButton>
+   
+             <AddButton type="button" onClick={toggleFavorites}>
+              {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
+             </AddButton>
+            
+
+   
+    <RatingButton type="button" >Give a rating</RatingButton>
    </ButtonWrapper>
+
+
    {openModal && <ModalRating 
     onClose={() => setOpenModal(false)} 
     recipeId={selectedRecipeId} 

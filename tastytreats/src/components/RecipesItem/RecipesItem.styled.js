@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import color from '../../global/globalColors';
-
+import { IoIosHeartEmpty } from 'react-icons/io';
+import { IoMdHeart } from 'react-icons/io';
 
 
 
@@ -112,3 +113,51 @@ z-index: 2;
   border: 1px solid ${color.greenPrimary};  
 }
 `;  
+
+export const FavoriteBtn = styled.button`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: var(--main-light-txt-color);
+  background: var(--main-accent-color);
+  border: none;
+  border-radius: 30px;
+  padding: 12px 0;
+  cursor: pointer;
+  transition: all var(--main-transition);
+
+  &:hover {
+    background-color: var(--hover-accent-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 14px 0;
+  }
+`;
+
+export const EmptyHeartIcon = styled(IoIosHeartEmpty)`
+  fill:  #ffffff;
+  stroke: red
+  width: 18px;
+  height: 18px;
+`;
+
+export const FillHeartIcon = styled(IoMdHeart)`
+
+
+  color: #ffffff;
+  width: 18px;
+  height: 18px;
+`;
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  gap: 10px;
+  width: 100%;
+`;
