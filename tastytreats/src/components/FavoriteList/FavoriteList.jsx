@@ -20,11 +20,7 @@ console.log("FAVORITES:", favorites);
           {favorites.map(favorite => (
             <RecipesItem key={favorite._id} recipe={favorite} />
           ))}
-           {/* <Pagination
-            totalPages={totalPages}
-            currentPage={page}
-            onPageChange={(newPage) => dispatch(setPage(newPage))}
-          /> */}
+         
        </FavoriteListContainer>
        <Pagination
          totalPages={totalPages}
