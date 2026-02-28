@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/TastyTreatsReact/static/css/main.841f7233.css",
-    "main.js": "/TastyTreatsReact/static/js/main.40b356b2.js",
+    "main.css": "/TastyTreatsReact/static/css/main.8df40059.css",
+    "main.js": "/TastyTreatsReact/static/js/main.5b3dc29a.js",
+    "static/media/hero.jpg": "/TastyTreatsReact/static/media/hero.e85b820da0e5bf3bc32e.jpg",
     "static/media/bigcard2.png": "/TastyTreatsReact/static/media/bigcard2.c1e6398cf868f9d19605.png",
     "static/media/bigCard.png": "/TastyTreatsReact/static/media/bigCard.4d2856318e78979b1f28.png",
     "static/media/bigcard3.png": "/TastyTreatsReact/static/media/bigcard3.e2bb6e27010274aa23c5.png",
@@ -13,11 +14,11 @@
     "static/media/shef2.png": "/TastyTreatsReact/static/media/shef2.28c813b4d32b309de426.png",
     "static/media/sprite.svg": "/TastyTreatsReact/static/media/sprite.e9e8ed8e06d73649cb41f05c4c657c76.svg",
     "index.html": "/TastyTreatsReact/index.html",
-    "main.841f7233.css.map": "/TastyTreatsReact/static/css/main.841f7233.css.map",
-    "main.40b356b2.js.map": "/TastyTreatsReact/static/js/main.40b356b2.js.map"
+    "main.8df40059.css.map": "/TastyTreatsReact/static/css/main.8df40059.css.map",
+    "main.5b3dc29a.js.map": "/TastyTreatsReact/static/js/main.5b3dc29a.js.map"
   },
   "entrypoints": [
-    "static/css/main.841f7233.css",
-    "static/js/main.40b356b2.js"
+    "static/css/main.8df40059.css",
+    "static/js/main.5b3dc29a.js"
   ]
 }
