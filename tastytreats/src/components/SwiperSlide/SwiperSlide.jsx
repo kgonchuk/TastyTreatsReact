@@ -62,18 +62,21 @@ export default RecipeSwiper;
 
 const SwiperContainer = styled.div`
   width: 100%;
-  max-width: 1280px;   /* ❗ ОБМЕЖУЄ viewport */
-  overflow: hidden;   /* ❗ третій слайд обрізається */
+  max-width: 1280px;   
+  overflow: hidden;   
  padding:40px 0 56px;
   .swiper {
     overflow: hidden;
+    
   }
 
   .swiper-slide {
     width: auto;
+    
   }
     .swiper-wrapper{
-    margin-left: 80px;   /* ❗ прибирає відступ зліва */
+    margin-left: 80px;  
+    
     }
     .swiper-pagination{
    position:static;
@@ -81,12 +84,17 @@ const SwiperContainer = styled.div`
     text-align:center;
 
     color:${color.blackPrimary}
+    
     }
-    .swiper-pagination-bullet-active{
+ 
+.swiper-pagination-bullet {
+    background-color: var(--swiper-bullet-color);
+    // opacity: 0.5;
+  }
+   .swiper-pagination-bullet-active{
       background-color:${color.greenPrimary};
+      
       }
-
-
     .swiper-button-prev, .swiper-button-next{
 display:none;
     }

@@ -21,6 +21,9 @@ body {
   --pagination-color:#050505;
   --pagination-border-color:#0505054D;
 
+   --swiper-bullet-color: #000000;
+  --swiper-bullet-active: #9BB537;
+
    --category-bg: transparent;
   --category-text: #05050580;
   --category-border: #05050533;
@@ -53,6 +56,9 @@ body {
 
    --pagination-color:#FFFFFF;
     --pagination-border-color:#FFFFFF4D;
+
+    --swiper-bullet-color: #ffffff;
+  --swiper-bullet-active: #9BB537;
 
  --category-bg: transparent;
   --category-text: #FFFFFF80;
