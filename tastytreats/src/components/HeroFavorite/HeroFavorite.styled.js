@@ -8,10 +8,11 @@ export const HeroFavoriteContainer = styled.div`
 //   margin-top: 100px;     
   margin-bottom: 64px;  
 //   padding: 0 0 0 100px; 
+
 `;  
 
 export const FavoriteImg= styled.img`
   width: 100%;
   height: auto;
-
+border-radius:15px;
 `;  

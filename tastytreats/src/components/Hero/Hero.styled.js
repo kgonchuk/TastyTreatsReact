@@ -5,13 +5,8 @@ export const HeroContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-// margin-top: 100px;     
+  justify-content: center;    
 margin-bottom: 100px;  
-
-
-
-
 `;
 
 export const HeroTextBlock = styled.div`
@@ -22,7 +17,7 @@ export const HeroTitle = styled.h1`
   font-size: 36px;
   font-weight: 600;
   line-height: 1.2;
-  color: ${color.blackPrimary};
+  color: var(--text-color);
   text-transform: uppercase;
   span { 
     color: ${color.greenPrimary};
@@ -34,7 +29,7 @@ margin-bottom: 16px;
 
 export const HeroSubtitle = styled.h2`
   font-size: 16px;
-  color: ${color.blackPrimary};
+color: var(--text-color);
  font-weight: 400;
 line-height: 24px;
 `;
@@ -42,8 +37,8 @@ line-height: 24px;
 export const HeroButton = styled.button`
   padding: 14px 28px;
   font-size: 14px;
-  color: ${color.blackPrimary};
-background-color: white;
+  color: var(--text-color);
+background-color:transparent;
   border: 1px solid ${color.greenPrimary};
   border-radius: 15px;
   cursor: pointer;

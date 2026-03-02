@@ -31,17 +31,20 @@ export const NavLinks = styled.nav`
 
 export const HomeLink = styled(NavLink)`
   text-decoration: none;
-  color: ${color.blackPrimary};
+  color: var(--link-color);
+  transition: color 0.3s ease;
+
   &:hover {
-    
+    color: var(--link-hover);
   }
+
   &.active {
-    color: ${color.greenPrimary};
+    color: #9BB537;
   }
 `;      
 export const FavoriteLink = styled(NavLink)`
 text-decoration: none;
- color: ${color.blackPrimary};
+  color: var(--link-color);
   &:hover {
     
   }
@@ -52,12 +55,21 @@ text-decoration: none;
 export const TitleLink = styled(NavLink)`
 text-decoration: none;
   font-size: 18px;
-  color: ${color.blackPrimary};
   font-family: 'Inter', sans-serif;
    font-weight: 600;
   margin: 0;
+ color: ${color.blackPrimary};
+  transition: color 0.3s ease;
+color: var(--text-color);
+  &:hover {
+    color: var(--link-hover);
+  }
+
+  // &.active {
+  //   color: #9BB537;
+  // }
   span {
-    color: ${color.greenPrimary};
+   color: ${color.greenPrimary};
   }
 `;  
 
@@ -65,14 +77,26 @@ export const CartLink = styled.a`
   text-decoration: none;
   color: #333;
   font-size: 18px;
+ color: var(--link-color);
+  transition: color 0.3s ease;
 
   &:hover {
-    color: #000;
+    fill: var(--link-hover);
+  }
+
+  &.active {
+    color: #9BB537;
   }
 `;
 export const CartIcon = styled.svg`
   width: 24px;
   height: 24px;
+  color: var(--icon-color);
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--icon-hover);
+  }
 
 `;  
 

@@ -23,6 +23,7 @@ import  recipesReducer  from '../redux/recipes/recipesSlice';
 import popularRecipesReducer from '../redux/popular/popularSlice';
 import ratingSlice from './rating/ratingSlice';
 import favoritesSlice from './favorites/favoritesSlice';
+import themeSlice from './themeSlice/themeSlice'
 
 const persistConfig = {
   key: 'root',
@@ -40,6 +41,7 @@ const rootReducer = combineReducers({
   orders: ordersReducer,
   rating: ratingSlice,
   favorites: favoritesSlice,
+  theme: themeSlice,
 });
 
 

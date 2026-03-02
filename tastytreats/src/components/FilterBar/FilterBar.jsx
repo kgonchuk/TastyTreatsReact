@@ -23,12 +23,12 @@ export const FilterBar  = ({ areas, ingredients }) => {
             value={title || ''}
             onChange={(e) => dispatch(setSearch(e.target.value))}
           />
-          {/* Іконка йде після інпута для роботи CSS селектора ~ */}
+         
           <SearchIcon>
             <use href={`${sprite}#search`}></use>
           </SearchIcon>
 
-          {/* Хрестик для очищення (з'являється лише коли є текст) */}
+        
           {title && (
             <CloseIconBtn onClick={() => dispatch(setSearch(''))}>
               <svg>
@@ -46,7 +46,7 @@ export const FilterBar  = ({ areas, ingredients }) => {
     placeholder="00 min"
     options={timeOptions.map(t => ({ value: t, label: `${t} min` }))}
     onChange={(opt) => dispatch(setTime(opt ? opt.value : null))}
-    isSearchable={false} // Приховуємо клавіатуру на мобільних, якщо не треба писати
+    isSearchable={false} 
   />
   </SelectWrapper>
 

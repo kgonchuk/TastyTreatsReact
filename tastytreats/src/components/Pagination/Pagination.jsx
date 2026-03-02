@@ -24,6 +24,7 @@ export const Pagination = ({ totalPages, currentPage, onPageChange }) => {
     <PaginatorWrap>
       {/* Перша сторінка */}
       <PaginatorBtn
+       nav
         disabled={currentPage === 1}
         onClick={() => onPageChange(1)}
       >
@@ -32,6 +33,7 @@ export const Pagination = ({ totalPages, currentPage, onPageChange }) => {
 
       {/* Попередня */}
       <PaginatorBtn
+       nav
         disabled={currentPage === 1}
         onClick={() => onPageChange(currentPage - 1)}
       >
@@ -57,6 +59,7 @@ export const Pagination = ({ totalPages, currentPage, onPageChange }) => {
 
       {/* Наступна */}
       <PaginatorBtn
+        nav
         disabled={currentPage === totalPages}
         onClick={() => onPageChange(currentPage + 1)}
       >
@@ -65,6 +68,7 @@ export const Pagination = ({ totalPages, currentPage, onPageChange }) => {
 
       {/* Остання */}
       <PaginatorBtn
+        nav
         disabled={currentPage === totalPages}
         onClick={() => onPageChange(totalPages)}
       >

@@ -5,7 +5,6 @@ export const FilterBarContainer = styled.div`
 `;  
 export const FilterBarWrapper = styled.div` 
  display: flex;
-//   flex-wrap: wrap; /* Для адаптивності */
   gap: 16px;
   align-items: flex-end;
   `;  
@@ -20,7 +19,7 @@ font-size: 14px;
 font-weight: 500;
 color: ${color.greySecondary};
 margin-bottom: 8px;
-
+color:var( --category-input-text);
 
 `;
 
@@ -38,7 +37,8 @@ export const SearchIcon=styled.svg`
   width: 16px;
   height: 16px;
   fill: transparent;
-  stroke: ${color.greySecondary}; // Базовий колір іконки
+  // stroke: ${color.greySecondary};
+   stroke: var( --category-input-text);
   transition: stroke 250ms ease;
   pointer-events: none;
 
@@ -51,9 +51,9 @@ export const SearchInput = styled.input`
 width: 230px;
 
   border-radius: 15px;
-  border: 1px solid ${color.grayBorder};
+  border: 1px solid var( --category-input-text);
   font-size: 14px;
-
+background-color: transparent;
   &:focus {
     outline: none;
     border-color: ${color.greenPrimary};
@@ -99,34 +99,39 @@ export const customStyles = {
     width: '100%',
     height: '46px',
     backgroundColor: 'transparent',
-    border: '1px solid rgba(5, 5, 5, 0.2)',
+    border:'1px solid var(--category-input-text)',
     borderRadius: '14px',
     padding: '0 14px',
     fontSize: '14px',
     fontWeight: '500',
     lineHeight: '1.25',
-    color: '#050505',
+    color: 'var(--category-input-text)',
     cursor: 'pointer',
     boxShadow: 'none',
-    borderColor: state.isFocused ? '#9BB537' : 'rgba(5, 5, 5, 0.2)', // Зелений фокус як у Figma
+    borderColor: state.isFocused ? '#9BB537' : 'rgba(5, 5, 5, 0.2)', 
     '&:hover': {
       borderColor: '#9BB537',
     },
   }),
+  singleValue: (base) => ({
+  ...base,
+  color: 'var(--popular-text)',
+}),
   valueContainer: (base) => ({
     ...base,
     padding: '0',
+    
   }),
   placeholder: (base) => ({
     ...base,
-    color: 'rgba(5, 5, 5, 0.5)',
+    color: 'var(--category-input-text)',
   }),
   indicatorSeparator: () => ({
     display: 'none',
   }),
   dropdownIndicator: (base, state) => ({
     ...base,
-    color: 'rgba(5, 5, 5, 0.5)',
+     color: 'var(--category-input-text)',
     transition: 'transform 250ms ease',
     transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : 'rotate(0deg)',
     '&:hover': {
@@ -137,29 +142,32 @@ export const customStyles = {
     ...base,
     marginTop: '4px',
     padding: '8px 4px',
-    backgroundColor: '#ffffff',
+    backgroundColor: 'var(--filter-otion-color)',
     borderRadius: '14px',
-    boxShadow: '0px 4px 36px 0px rgba(0, 0, 0, 0.02)', // М'яка тінь з макета
+    boxShadow: '0px 4px 36px 0px rgba(0, 0, 0, 0.02)', 
     border: 'none',
     overflow: 'hidden',
   }),
   menuList: (base) => ({
     ...base,
-    maxHeight: '180px', // Висота списку
+    maxHeight: '180px', 
     padding: '0',
     '&::-webkit-scrollbar': {
       width: '6px',
     },
     '&::-webkit-scrollbar-thumb': {
-      backgroundColor: 'rgba(5, 5, 5, 0.1)',
+      backgroundColor: 'var(--text-color)',
       borderRadius: '12px',
+      
     },
   }),
   option: (base, state) => ({
     ...base,
     fontSize: '14px',
     fontWeight: '400',
-    color: state.isSelected ? '#9BB537' : 'rgba(5, 5, 5, 0.3)',
+    color: state.isSelected
+    ? 'var(--category-hover-bg)'
+    : 'var(--text-color-grey)',
     backgroundColor: 'transparent',
     cursor: 'pointer',
     padding: '6px 14px',
@@ -188,7 +196,7 @@ background-color: transparent;
   
   font-size: 12px;
   font-weight: 500;
-  color:${color.greySecondary};
+   color:var(--category-input-text);
   transition: color 250ms ease;
 
   display: flex;

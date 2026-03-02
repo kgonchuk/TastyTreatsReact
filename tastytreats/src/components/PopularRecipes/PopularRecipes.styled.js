@@ -4,7 +4,8 @@ import color from "../../global/globalColors";
 
 export const PoopularRecipesSection = styled.div`
 
-  background-color: #fff;
+  background-color: transparent;
+margin-top:64px;
 
 `;
 
@@ -14,12 +15,12 @@ export const SectionTitle = styled.h2`
   text-transform: uppercase;
   text-align: start;
   margin-bottom: 30px;
-  color:${color.blackPrimary};
+  color:var(--popular-text);
 `;
 
 export const RecipeCard = styled.div`
 width:235px;
-  background-color: #ffffff;
+ background-color: transparent;
 
 
   overflow: hidden;

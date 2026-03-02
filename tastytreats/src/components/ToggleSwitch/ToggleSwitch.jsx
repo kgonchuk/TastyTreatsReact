@@ -1,32 +1,91 @@
-import { useState } from "react";
-import { HiddenCheckbox, Inner, StyledLabel,  Switch,  SwitchWrapper, ToggleSwitchContainer } from "./ToggleSwitch.styled";
+// import { useState } from "react";
+// import { HiddenCheckbox, Inner, StyledLabel,  Switch,  SwitchWrapper, ToggleSwitchContainer } from "./ToggleSwitch.styled";
+
+// export const ToggleSwitch = ({ label }) => {
+  
+//      const [isChecked, setIsChecked] = useState(false);
+
+//   const toggleSwitch = () => {
+//     setIsChecked(!isChecked);
+//   };
+//   return (
+//      <ToggleSwitchContainer>
+    
+//       <SwitchWrapper>
+  
+//         <HiddenCheckbox
+//           type="checkbox"
+//           className="checkbox"
+//           id={label}
+//           checked={isChecked}
+//           onChange={toggleSwitch}
+//         />
+      
+//         <StyledLabel htmlFor={label} className="label">
+//           <Inner className="inner" />
+//      <Switch ischecked={isChecked} />
+
+//         </StyledLabel >
+       
+//       </SwitchWrapper>
+//     </ToggleSwitchContainer>
+//   );
+// }   
+
+// // import { useDispatch } from "react-redux";
+// // import { toggleTheme } from "../../redux/themeSlice/themeSlice";
+// // import { HiddenCheckbox, Inner, StyledLabel,  Switch,  SwitchWrapper, ToggleSwitchContainer } from "./ToggleSwitch.styled";
+
+// // export const ToggleSwitch = () => {
+// //   const dispatch = useDispatch();
+
+// //   return (
+// //     <ToggleSwitchContainer>
+// //       <SwitchWrapper>
+// //     <button onClick={() => dispatch(toggleTheme())}>
+// //       Toggle
+// //     </button>
+// //     </SwitchWrapper>
+// //     </ToggleSwitchContainer>
+// //   );
+// // };
+
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "../../redux/themeSlice/themeSlice";
+import {
+  HiddenCheckbox,
+  Inner,
+  StyledLabel,
+  Switch,
+  SwitchWrapper,
+  ToggleSwitchContainer,
+} from "./ToggleSwitch.styled";
 
 export const ToggleSwitch = ({ label }) => {
-     const [isChecked, setIsChecked] = useState(false);
+  const dispatch = useDispatch();
+  const theme = useSelector(state => state.theme.mode);
 
-  const toggleSwitch = () => {
-    setIsChecked(!isChecked);
+  const isChecked = theme === "dark";
+
+  const handleToggle = () => {
+    dispatch(toggleTheme());
   };
+
   return (
-     <ToggleSwitchContainer>
-    
+    <ToggleSwitchContainer>
       <SwitchWrapper>
-        {/* The actual checkbox input, hidden visually */}
         <HiddenCheckbox
           type="checkbox"
-          className="checkbox"
           id={label}
           checked={isChecked}
-          onChange={toggleSwitch}
+          onChange={handleToggle}
         />
-        {/* The label acts as the visible switch UI */}
-        <StyledLabel htmlFor={label} className="label">
-          <Inner className="inner" />
-     <Switch ischecked={isChecked} />
 
-        </StyledLabel >
-       
+        <StyledLabel htmlFor={label}>
+          <Inner />
+          <Switch ischecked={isChecked ? 1 : 0} />
+        </StyledLabel>
       </SwitchWrapper>
     </ToggleSwitchContainer>
   );
-}   
+};

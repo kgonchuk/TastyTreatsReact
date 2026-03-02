@@ -29,13 +29,13 @@ export const RecipeTitle = styled.h3`
     line-height: 1.2;
 text-transform: uppercase;
 margin-bottom: 8px;
-  color: ${color.blackPrimary};
+  color:var(--popular-text);
 `;
 
 export const RecipeDescription = styled.p`
   font-size: 14px;
 fnt-weight: 400;
-  color: ${color.greyText};
+  color:var(--popular-text);
    display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
