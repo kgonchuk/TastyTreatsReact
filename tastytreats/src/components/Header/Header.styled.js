@@ -7,7 +7,7 @@ display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  padding: 44px 0 44px 100px;
+  padding: 44px 100px 44px 100px;
 `;
 export const LinkList = styled.ul`
   list-style: none;
@@ -64,16 +64,12 @@ color: var(--text-color);
   &:hover {
     color: var(--link-hover);
   }
-
-  // &.active {
-  //   color: #9BB537;
-  // }
   span {
    color: ${color.greenPrimary};
   }
 `;  
 
-export const CartLink = styled.a`
+export const CartLink = styled(NavLink)`
   text-decoration: none;
   color: #333;
   font-size: 18px;

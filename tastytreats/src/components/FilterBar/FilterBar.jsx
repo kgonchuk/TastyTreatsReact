@@ -47,6 +47,8 @@ export const FilterBar  = ({ areas, ingredients }) => {
     options={timeOptions.map(t => ({ value: t, label: `${t} min` }))}
     onChange={(opt) => dispatch(setTime(opt ? opt.value : null))}
     isSearchable={false} 
+     menuPortalTarget={document.body}
+  menuPosition="fixed"
   />
   </SelectWrapper>
 
@@ -60,6 +62,8 @@ placeholder="Region"
     options={areas.map(item => ({ value: item.name, label: item.name }))}
     onChange={(opt) => dispatch(setArea(opt ? opt.value : null))}
     isClearable
+     menuPortalTarget={document.body}
+  menuPosition="fixed"
   />
   </SelectWrapper>
 

@@ -16,10 +16,10 @@ export const ModalOverlay = styled.div`
 
 export const ModalContent = styled.div`
 
-    background-color: #fff;     
+    background-color: var( --bg-color);     
     border-radius: 8px;
     padding: 32px;
-
+border:1px solid var( --border-rating-color);
     width: 360px;
     max-width: 600px;                   
     max-height: 80vh;
@@ -36,13 +36,13 @@ export const CloseButton = styled.button`
     border: none;
     font-size: 24px;
     cursor: pointer;
-     color: #000000;
+    color: var(--text-color);
     `;      
 export const RatingTitle = styled.h2`
     font-size:18px;
     font-weight: 600;
     margin-bottom: 14px;        
-    color: ${color.blackPrimary};
+     color: var(--text-color);
 
     margin-bottom:16px
     `;  
@@ -55,7 +55,7 @@ margin-bottom: 24px;
 export const RatingValue = styled.span`
 font-size: 16px;
 font-weight: 500;
-color: ${color.blackPrimary};
+  color: var(--text-color);
 `;  
 export const ButtonWrapper = styled.div`
 display: flex;
@@ -76,17 +76,12 @@ width: 100%;
 }
 `;  
 
-export const RatingLabel=styled.label`
-display: flex;
-align-items: center;
-gap: 8px;
-font-size: 14px;
-color: ${color.blackPrimary};
-`;  
+
 export const RatingInput=styled.input`  
 width: 324px;    
 padding: 14px 18px;
-border: 1px solid #e3e3e3;
+border: 1px solid  var( --text-color-grey);
+background-color:transparent;
 border-radius: 15px;
 font-size: 14px;
 color: ${color.blackPrimary};

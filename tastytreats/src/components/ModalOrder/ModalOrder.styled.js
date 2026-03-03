@@ -16,7 +16,7 @@ export const ModalOverlay = styled.div`
 
 export const ModalContent = styled.div`
 position: relative;
-  background-color: #fff;
+  background-color: var(--bg-color);
   padding: 40px;
   border-radius: 15px;
   // width: 440px;
@@ -29,7 +29,7 @@ export const ModalTitle = styled.h2`
 font-size: 18px;
 font-weight: 600;
 line-height: 1.22;
-color: ${color.blackPrimary};
+color: var(--text-color);
 margin-bottom: 40px;
 text-transform: uppercase;
 `;
@@ -42,11 +42,12 @@ position: absolute;
   border: none;
   font-size: 1.5em;
   cursor: pointer;
+
 `;
 export const CloseIcon = styled.svg`
   width: 1em;
   height: 1em;
-  fill: #333;
+  fill: var(--text-color);
 `;
 
 export const ModalBody = styled.div`
@@ -60,8 +61,9 @@ export const Label = styled.label`
   font-weight: 500;
 font-size: 14px;
 line-height: 1.21;
-color: ${color.greySecondary};
+color: var(--category-input-text);
 margin-bottom: 8px;
+
 `;
 export const Input = styled.input`
   margin-bottom: 18px;
@@ -69,6 +71,7 @@ export const Input = styled.input`
   border-radius: 15px;
   font-size: 1em;
   height: 48px;
+  background-color:transparent;
 `;
 
 export const TextArea = styled.textarea`
@@ -78,6 +81,7 @@ export const TextArea = styled.textarea`
   border-radius: 15px;
   font-size: 1em;
   resize: vertical;
+  background-color:transparent;
   
 `;
 

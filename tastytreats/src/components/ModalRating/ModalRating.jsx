@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { CloseButton, ModalContent, ModalOverlay, RatingInput, RatingLabel, RatingTitle, RatingValue, StarsWrapper, SubmitButton } from "./ModalRating.styled";
+import { CloseButton, ModalContent, ModalOverlay, RatingInput, RatingTitle, RatingValue, StarsWrapper, SubmitButton } from "./ModalRating.styled";
 import ReactStars from "react-stars";
 import { useDispatch } from "react-redux";
 import { patchRating } from "../../redux/operations";
@@ -76,16 +76,8 @@ useEffect(() => {
     activeColor="#FFC107"
   />
 </StarsWrapper>
- {/* <Formik initialValues={{ email: '' }} onSubmit={(values) 
- => console.log(values)}> {({ values, handleChange, handleSubmit })
-  => ( <form onSubmit={handleSubmit}> 
-  <RatingLabel htmlFor="email"></RatingLabel> 
-  <RatingInput id="email" name="email" type="email" 
-  placeholder="Enter email" value={values.email} 
-  onChange={handleChange} /> 
-  <SubmitButton type="submit">Send</SubmitButton> </form> )}
-   </Formik> */} 
-   <RatingInput type="email" value={email} onChange={(e) => setEmail(e.target.value)} /> 
+
+   <RatingInput type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter email"/> 
    <SubmitButton onClick={handleSubmit} disabled={!rating}> Send </SubmitButton>
       </ModalContent>
        </ModalOverlay>

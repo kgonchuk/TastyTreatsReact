@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { fetchAreaRecipes, fetchIngredientsRecipes } from "../../redux/operations";
 
 
+
 export const HomePage = () => {
 const dispatch = useDispatch();
   const [areas, setAreas] = useState([]);

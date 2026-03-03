@@ -1,137 +1,102 @@
 
 
-import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { findMasterClasses } from "../../redux/operations";
+
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import styled from "styled-components";
+import { Pagination, Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import chef1 from "../../images/shef1.png";
-import card1 from "../../images/card1.png";
-import bigcard1 from "../../images/bigCard.png";
-import chef2 from "../../images/shef2.png";
-import card2 from "../../images/card2.png";
-import bigcard2 from "../../images/bigcard2.png";
-import chef3 from "../../images/shef3.png";
-import card3 from "../../images/card3.png";
-import bigcard3 from "../../images/bigcard3.png";
-import color from "../../global/globalColors";
+import {
+  SwiperContainer,
+  SmallCard,
+  LargeCard,
+  Image,
+  Overlay,
+  Content,
+  BigImage,
 
+} from "./SwiperSlide.styled";
 
+export const RecipeSwiper = () => {
+  const dispatch = useDispatch();
+  const { items = [], isLoading, error } = useSelector(
+    (state) => state.events
+  );
 
-const recipes = [
-  { id: 1, image: chef1, variant: "small" },
-  { id: 2, image: card1, variant: "large" },
-  { id: 3, image: bigcard1, variant: "large" },
-  { id: 4, image: chef2, variant: "small" },
-  { id: 5, image: card2, variant: "large" },
-  { id: 6, image: bigcard2, variant: "large" },
-  { id: 7, image: chef3, variant: "small" },
-  { id: 8, image: card3, variant: "large" },
-  { id: 9, image: bigcard3, variant: "large" },
-];
+  useEffect(() => {
+    dispatch(findMasterClasses());
+  }, [dispatch]);
 
-const RecipeSwiper = () => {
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+
+  // Масив всіх карток у правильному порядку
+  const slides = [];
+  items.forEach((obj) => {
+    slides.push({
+      type: "small",
+      src: obj.cook?.imgWebpUrl,
+      alt: obj.cook?.name,
+    });
+    slides.push({
+      type: "large-text",
+      src: obj.topic?.previewWebpUrl,
+      alt: obj.topic?.name,
+      name: obj.topic?.name,
+      area: obj.topic?.area,
+    });
+    slides.push({
+      type: "large",
+      src: obj.topic?.imgWebpUrl,
+      alt: obj.topic?.name,
+    });
+  });
+
   return (
     <SwiperContainer>
       <Swiper
-        modules={[Navigation, Pagination]}
-        slidesPerView="auto"
+        modules={[Pagination, Navigation]}
+        slidesPerView={"auto"}
         spaceBetween={24}
-        navigation
+        loop={true}
+        navigation={{
+          prevEl: ".custom-prev",
+          nextEl: ".custom-next",
+        }}
         pagination={{ clickable: true }}
       >
-        {recipes.map((item) => (
-          <SwiperSlide key={item.id}>
-            <Card $variant={item.variant}>
-              <Image src={item.image} alt="" />
-              <Overlay />
-            </Card>
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            {slide.type === "small" && (
+              <SmallCard>
+                <Image src={slide.src} alt={slide.alt} />
+              </SmallCard>
+            )}
+
+            {slide.type === "large-text" && (
+              <LargeCard>
+                <Image src={slide.src} alt={slide.alt} />
+                <Overlay />
+                <Content>
+                  <h3>{slide.name}</h3>
+                  <p>{slide.area}</p>
+                </Content>
+              </LargeCard>
+            )}
+
+            {slide.type === "large" && (
+              <LargeCard>
+                <BigImage src={slide.src} alt={slide.alt} />
+              </LargeCard>
+            )}
           </SwiperSlide>
         ))}
       </Swiper>
     </SwiperContainer>
   );
 };
-
-export default RecipeSwiper;
-
-
-const SwiperContainer = styled.div`
-  width: 100%;
-  max-width: 1280px;   
-  overflow: hidden;   
- padding:40px 0 56px;
-  .swiper {
-    overflow: hidden;
-    
-  }
-
-  .swiper-slide {
-    width: auto;
-    
-  }
-    .swiper-wrapper{
-    margin-left: 80px;  
-    
-    }
-    .swiper-pagination{
-   position:static;
-    margin-top:16px;
-    text-align:center;
-
-    color:${color.blackPrimary}
-    
-    }
- 
-.swiper-pagination-bullet {
-    background-color: var(--swiper-bullet-color);
-    // opacity: 0.5;
-  }
-   .swiper-pagination-bullet-active{
-      background-color:${color.greenPrimary};
-      
-      }
-    .swiper-button-prev, .swiper-button-next{
-display:none;
-    }
-    
-`;
-
-const Card = styled.div`
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #000;
-  flex-shrink: 0;
-  height: 420px;
-
-  ${({ $variant }) =>
-    $variant === "small"
-      ? `
-        width: 137px;   /* 1-й вузький */
-      `
-      : `
-        width: 351px;   /* 2-й і далі широкі */
-      `}
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
-const Overlay = styled.div`
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.6),
-    transparent 60%
-  );
-`;
-

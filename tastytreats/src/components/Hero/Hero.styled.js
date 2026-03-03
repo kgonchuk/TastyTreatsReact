@@ -49,7 +49,6 @@ background-color:transparent;
     margin-top: 32px;
 `;  
 export const HeroSlideBlock = styled.div`
-// height: 871;
 width: 702px;
 
 `;    

@@ -5,6 +5,7 @@ import { FavoritePage } from './pages/FavoritePage/FavoritePage';
 import { HomePage } from './pages/HomePage/HomePage';
 import { useSelector } from 'react-redux';
 
+
 function App() {
 const theme= useSelector(state=>state.theme.mode)
  useEffect(() => {
@@ -20,6 +21,8 @@ const theme= useSelector(state=>state.theme.mode)
 
             <Route index element={<HomePage />} />
             <Route path="favorites" element={<FavoritePage/>} />
+
+
           </Route>
           
           <Route path="*" element={<div>Сторінку не знайдено</div>} />

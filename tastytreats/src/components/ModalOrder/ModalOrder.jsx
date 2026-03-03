@@ -31,6 +31,8 @@ export const ModalOrder = ({closeModal}) => {
         closeModal();
       }
     };
+ 
+
   return (
    <ModalOverlay  onClick={handleCloseOnBackdrop}>
     <ModalContent>
@@ -45,7 +47,7 @@ export const ModalOrder = ({closeModal}) => {
         comment: '',
       }}
      validationSchema={orderValidationSchema} 
-    >{({values, setFieldValue,  errors, touched,onChange})=>(
+    >{({errors, touched,onChange, handleSubmit})=>(
       <Form>
         <ModalBody>
 

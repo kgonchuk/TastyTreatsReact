@@ -147,7 +147,12 @@ export const customStyles = {
     boxShadow: '0px 4px 36px 0px rgba(0, 0, 0, 0.02)', 
     border: 'none',
     overflow: 'hidden',
+    zIndex: 9999,
   }),
+  menuPortal: (base) => ({
+  ...base,
+  zIndex: 9999,
+}),
   menuList: (base) => ({
     ...base,
     maxHeight: '180px', 
@@ -172,6 +177,7 @@ export const customStyles = {
     cursor: 'pointer',
     padding: '6px 14px',
     transition: 'color 250ms ease',
+    
     '&:hover': {
       color: '#050505',
     },

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RecipeSwiper, { Slide } from "../SwiperSlide/SwiperSlide";
+import  {  RecipeSwiper, } from "../SwiperSlide/SwiperSlide";
 import { HeroButton, HeroContainer, HeroSlideBlock, HeroSubtitle, HeroTextBlock, HeroTitle, HeroWrapper } from "./Hero.styled";
 import { ModalOrder } from "../ModalOrder/ModalOrder";
 

@@ -13,7 +13,7 @@ export const Header = () => {
      </NavLinks>
      <TitleLink to="/"><span>tasty</span>treats.</TitleLink>
      <HeaderBtnBox>
-     <CartLink href="/cart">
+     <CartLink to="/">
      <CartIcon> 
       <use  href={`${sprite}#icon-shopping-cart`}  />
       </CartIcon>

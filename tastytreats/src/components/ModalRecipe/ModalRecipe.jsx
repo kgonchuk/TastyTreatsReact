@@ -15,11 +15,11 @@ export const ModalRecipe = ({recipedInfo, onClose }) => {
   const{ title, rating, time, instructions, category} = recipedInfo;
 
   const [selectedRecipeId, setSelectedRecipeId] = useState(null);
-// const handlModalOpen = (e) => {
-//   if (e) e.stopPropagation();
-//   setSelectedRecipeId(recipedInfo._id);
-//   setOpenModal(true);
-// };
+const handleModalOpen = (e) => {
+  e.stopPropagation();
+  setSelectedRecipeId(recipedInfo._id);
+  setOpenModal(true);
+};
 
 
   const ingredientsMap = useSelector(state =>
@@ -110,7 +110,7 @@ const toggleFavorites = () => {
             
 
    
-    <RatingButton type="button" >Give a rating</RatingButton>
+    <RatingButton type="button" onClick={handleModalOpen}>Give a rating</RatingButton>
    </ButtonWrapper>
 
 

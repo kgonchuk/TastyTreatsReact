@@ -16,7 +16,7 @@ export const ModalOverlay = styled.div`
 
 export const ModalContent = styled.div`
 
-    background-color: #fff;     
+    background-color: var( --bg-color);     
     border-radius: 8px;
     padding: 32px;
 
@@ -37,14 +37,13 @@ export const CloseButton = styled.button`
     border: none;
     font-size: 24px;
     cursor: pointer;
-    color: ${color.greySecondary};
+    color: var(--text-color);
     `;
 
 export const RecipeTitle = styled.h2`
     font-size:18px;
     font-weight: 600;
-    margin-bottom: 16px;
-    color: ${color.blackPrimary};
+    color: var(--text-color);
     text-transform: uppercase;
     margin-bottom:16px
     `;
@@ -78,8 +77,8 @@ fill: #FFC107;
 export const RecipeCategory = styled.p`
     font-size: 12px;
     font-weight: 500;
-    color: ${color.blackPrimary};
-border: 1px solid ${color.grayBorder};
+    color: var(--text-color);
+border: 1px solid var(--category-input-text);
     border-radius: 35px;
     padding: 8px 16px;
 
@@ -87,12 +86,12 @@ border: 1px solid ${color.grayBorder};
     `;
 export const RecipeRating = styled.p`
     font-size: 14px;
-    color: ${color.greySecondary};
+    color: var(--category-input-text);
     `;
  
 export const RecipeTime = styled.p`
     font-size: 14px;
-    color: ${color.greySecondary};
+   color: var(--category-input-text);
 
     `;
 
@@ -112,20 +111,20 @@ export const IngredientsList = styled.ul`
 export const IngredientItem = styled.li`
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var( --order-bottom-color); 
   padding-bottom: 8px;
   font-size: 14px;
-  color: ${color.blackPrimary};
- border-bottom: 1px solid #e3e3e3;
+  color: var(--text-color);
 list-style: none;
   span:last-child {
-    color: ${color.greySecondary}; 
+    color: var(--order-span-color); 
   }
 `;
 export const InstructionText=styled.p`
 margin-top:32px;
 font-size:14px;
 font-weight:400;
+color:var(  --order-text-color);
 `;
 
 export const VideoWrapper = styled.div`
@@ -177,7 +176,7 @@ export const AddButton = styled.button`
 export const RatingButton = styled.button`
 padding: 14px 28px;
   background-color:transparent;
-  color:${color.blackPrimary};
+  color:var(--text-color);
     font-size:14px;
   font-weight:500;
   border: solid 1px ${color.greenPrimary};
