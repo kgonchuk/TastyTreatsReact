@@ -5,9 +5,7 @@ import {
   CategoriesList,
   CategoryButton,
   AllButton,
-  CategoryInputWrapper,
-  SearchInput,
-  AreaButton,
+
 } from './CategoryFilter.styled';
 import { useDispatch } from 'react-redux';
 import { setCategory } from '../../redux/recipes/recipesSlice';

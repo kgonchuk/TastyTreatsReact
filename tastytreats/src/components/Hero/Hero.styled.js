@@ -2,60 +2,93 @@ import styled from "styled-components";
 import color from "../../global/globalColors";
 
 export const HeroContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;    
-margin-bottom: 100px;  
+padding-bottom: 80px;
+@media screen and (min-width: 768px) {
+ padding-bottom: 100px;
+  }
 `;
 
 export const HeroTextBlock = styled.div`
-width: 446px;
+max-width: 100%;
 `;  
 
 export const HeroTitle = styled.h1`
-  font-size: 36px;
-  font-weight: 600;
+font-size: 26px;
   line-height: 1.2;
-  color: var(--text-color);
+  margin-bottom: 14px;
   text-transform: uppercase;
-  span { 
-    color: ${color.greenPrimary};
-    
-  }
-margin-bottom: 16px;
+  color: var(--text-color);
 
+  span {
+    color: ${color.greenPrimary};
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 48px;
+  }
 `;
 
 export const HeroSubtitle = styled.h2`
-  font-size: 16px;
-color: var(--text-color);
- font-weight: 400;
-line-height: 24px;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--text-color);
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+  
+  
 `;
 
 export const HeroButton = styled.button`
-  padding: 14px 28px;
+  padding: 10px 20px;
   font-size: 14px;
   color: var(--text-color);
 background-color:transparent;
   border: 1px solid ${color.greenPrimary};
-  border-radius: 15px;
+  border-radius: 12px;
   cursor: pointer;
 
   &:hover {
     background-color: darken(${color.greenPrimary}, 10%);
   }
-    margin-top: 32px;
+    margin-top: 28px;
+    margin-bottom: 48px;
+
+ @media screen and (min-width: 768px) {
+padding: 14px 28px;
+ border-radius: 15px;
+   margin-top: 32px;
+    margin-bottom: 0;
+  }
 `;  
 export const HeroSlideBlock = styled.div`
-width: 702px;
+width: 100%;
+  margin-top: 48px;
+
+  @media screen and (min-width: 768px) {
+    width: 702px;
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 800px;
+  }
 
 `;    
 export const HeroWrapper = styled.div`
-
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
 `;    

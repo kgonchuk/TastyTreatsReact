@@ -1,4 +1,4 @@
-import { CartIcon, CartLink, FavoriteLink, HeaderBtnBox, HeaderContainer, HomeLink, LinkItem, LinkList, NavLinks, TitleLink } from "./Header.styled";
+import { BurrgerIcon, CartIcon, CartLink, FavoriteLink, HeaderBtnBox, HeaderContainer, HomeLink, LinkItem, LinkList, MobileMenuBtn, NavLinks, TitleLink, ToggleSwitchWrap } from "./Header.styled";
 import sprite from '../../assets/sprite.svg';
 import { ToggleSwitch } from "../ToggleSwitch/ToggleSwitch";
 
@@ -18,7 +18,12 @@ export const Header = () => {
       <use  href={`${sprite}#icon-shopping-cart`}  />
       </CartIcon>
       </CartLink>
+      <ToggleSwitchWrap>
        <ToggleSwitch label="Enable Dark Mode" />
+       </ToggleSwitchWrap>
+       <MobileMenuBtn>
+        <BurrgerIcon><use href={`${sprite}#icon-menu`}/></BurrgerIcon>
+       </MobileMenuBtn>
      </HeaderBtnBox>
     </HeaderContainer>
   );

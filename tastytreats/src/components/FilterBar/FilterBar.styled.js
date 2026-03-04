@@ -4,23 +4,50 @@ import color from "../../global/globalColors";
 export const FilterBarContainer = styled.div`
 `;  
 export const FilterBarWrapper = styled.div` 
+
+   @media screen and (min-width: 768px) {
  display: flex;
   gap: 16px;
   align-items: flex-end;
+  }
   `;  
 export const SelectWrapper = styled.div` 
   display: flex;
   flex-direction: column;
 
-  `;  
+  `; 
+export const SelectTimeWrapper = styled.div` 
+  display: flex;
+  flex-direction: column;
+  width:160px;
+  @media screen and (min-width: 768px) {
+  width:125px;
+  }
+
+  `; 
+export const SelectAreaWrapper = styled.div` 
+  display: flex;
+  flex-direction: column;
+  width:161px;
+  @media screen and (min-width: 768px) {
+   width:141px;
+  }
+  `; 
+export const SelectIngredientsWrapper = styled.div` 
+  display: flex;
+  flex-direction: column;
+width:188px;
+  `; 
 
 export const SelectLabel = styled.label` 
-font-size: 14px;
+font-size: 12px;
 font-weight: 500;
 color: ${color.greySecondary};
 margin-bottom: 8px;
 color:var( --category-input-text);
-
+ @media screen and (min-width: 768px) {
+ font-size: 14px;
+  }
 `;
 
 export const FilterBarOption = styled.option`
@@ -32,23 +59,25 @@ color: ${color.greySecondary};
 export const SearchIcon=styled.svg`
   position: absolute;
   left: 12px;
-  top: 70%;
+  top: 55%;
   transform: translateY(-50%);
   width: 16px;
   height: 16px;
   fill: transparent;
-  // stroke: ${color.greySecondary};
    stroke: var( --category-input-text);
   transition: stroke 250ms ease;
   pointer-events: none;
-
+@media screen and (min-width: 768px) {
+top: 70%;
+  }
 `;  
 
 export const SearchInput = styled.input`
   padding-top: 14px;
   padding-bottom: 14px;
   padding-left: 48px;
-width: 230px;
+width: 283px;
+margin-bottom:14px;
 
   border-radius: 15px;
   border: 1px solid var( --category-input-text);
@@ -63,6 +92,10 @@ background-color: transparent;
   &:focus ~ ${SearchIcon} {
     stroke: ${color.greenPrimary};
     fill: ${color.greenPrimary};
+  }
+   @media screen and (min-width: 768px) {
+width: 230px;
+margin-bottom:0;
   }
 `;
 
@@ -91,6 +124,11 @@ position: relative;
   display: flex;
   flex-direction: column;
 
+`;
+export const InputWrap=styled.div`
+display:flex;
+flex-wrap:wrap;
+gap:14px;
 `;
 
 export const customStyles = {

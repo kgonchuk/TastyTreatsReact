@@ -4,15 +4,22 @@ import { NavLink } from "react-router-dom";
 
 export const HeaderContainer = styled.header`
 display: flex;
-  justify-content: space-between;
   align-items: center;
-  text-align: center;
-  padding: 44px 100px 44px 100px;
+  justify-content: space-between;
+  padding: 24px 0 64px;
+
+  @media screen and (min-width: 768px) {
+    padding: 32px 0 80px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 44px 0 100px;
+  }
 `;
 export const LinkList = styled.ul`
-  list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 24px;
+  list-style: none;
   padding: 0;
   margin: 0;
 `;
@@ -25,8 +32,11 @@ export const LinkItem = styled.li`
 `;
 
 export const NavLinks = styled.nav`
-  display: flex;
-  gap: 15px;
+   display: none;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 `;  
 
 export const HomeLink = styled(NavLink)`
@@ -54,7 +64,7 @@ text-decoration: none;
 `;  
 export const TitleLink = styled(NavLink)`
 text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   font-family: 'Inter', sans-serif;
    font-weight: 600;
   margin: 0;
@@ -66,6 +76,12 @@ color: var(--text-color);
   }
   span {
    color: ${color.greenPrimary};
+  }
+    @media screen and (min-width: 320px) and (max-width: 375px) {
+ 
+  }
+   @media screen and (min-width: 768px) {
+  font-size: 18px;
   }
 `;  
 
@@ -106,5 +122,29 @@ export const SwitcherButton = styled.button`
 export const HeaderBtnBox = styled.div`
   display: flex;
   align-items: center;
+gap:14px;
+@media screen and (min-width: 768px) {
 gap:24px
+}
+`;
+export const ToggleSwitchWrap=styled.div`
+display:none;
+ @media screen and (min-width: 320px) and (max-width: 375px) {
+ 
+  }
+   @media screen and (min-width: 768px) {
+  font-size: 18px;
+  }
+`;
+export const MobileMenuBtn=styled.button`
+padding:0;
+  @media screen and (min-width: 768px) {
+  display:none;
+  }
+`;
+export const BurrgerIcon=styled.svg`
+width:24px;
+height:24px;
+color:${color.blackPrimary};
+stroke:${color.blackPrimary};
 `;

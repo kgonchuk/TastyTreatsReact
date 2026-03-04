@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { CloseIconBtn, FilterBarContainer, FilterBarOption, FilterBarWrapper, ResetButton, ResetWrapper, SearchIcon, SearchInput, SearchInputWrapper,SelectIngridients, SelectLabel, SelectRegion, SelectTime, SelectWrapper, customStyles } from "./FilterBar.styled"
+import { CloseIconBtn, FilterBarContainer, FilterBarOption, FilterBarWrapper, InputWrap, ResetButton, ResetWrapper, SearchIcon, SearchInput, SearchInputWrapper,SelectAreaWrapper,SelectIngredientsWrapper,SelectIngridients, SelectLabel, SelectRegion, SelectTime, SelectTimeWrapper, SelectWrapper, customStyles } from "./FilterBar.styled"
 import { setArea, setIngredient, setSearch, setTime } from "../../redux/recipes/recipesSlice";
 import sprite from '../../assets/sprite.svg';
 import Select from 'react-select';
@@ -37,9 +37,9 @@ export const FilterBar  = ({ areas, ingredients }) => {
             </CloseIconBtn>
           )}
         </SearchInputWrapper>
-
+<InputWrap>
 {/* Time */}
-  <SelectWrapper style={{ width: '125px' }}>
+  <SelectTimeWrapper>
     <SelectLabel>Time</SelectLabel>
   <Select
     styles={customStyles}
@@ -50,10 +50,10 @@ export const FilterBar  = ({ areas, ingredients }) => {
      menuPortalTarget={document.body}
   menuPosition="fixed"
   />
-  </SelectWrapper>
+  </SelectTimeWrapper>
 
 {/* Area */}
-  <SelectWrapper style={{ width: '141px' }}>
+  <SelectAreaWrapper>
     <SelectLabel>Area</SelectLabel>
      <Select
     styles={customStyles}
@@ -65,10 +65,10 @@ placeholder="Region"
      menuPortalTarget={document.body}
   menuPosition="fixed"
   />
-  </SelectWrapper>
+  </SelectAreaWrapper>
 
 {/* Ingredients */}
-  <SelectWrapper style={{ width: '188px' }}>
+  <SelectIngredientsWrapper >
     <SelectLabel>Ingredients</SelectLabel>
       <Select
     styles={customStyles}
@@ -78,8 +78,8 @@ placeholder="Product"
     onChange={(opt) => dispatch(setIngredient(opt ? opt.value : null))}
     isClearable
   />
-  </SelectWrapper>
-
+  </SelectIngredientsWrapper>
+</InputWrap>
  
 </FilterBarWrapper>
 

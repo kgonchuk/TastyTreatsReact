@@ -1,25 +1,29 @@
 import styled from 'styled-components';
-import color from "../../global/globalColors";
-
 
 export const PoopularRecipesSection = styled.div`
 
   background-color: transparent;
+margin-top:40px;
+ @media screen and (min-width: 768px) {
 margin-top:64px;
-
+  }
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
   text-align: start;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   color:var(--popular-text);
+  @media screen and (min-width: 768px) {
+  font-size: 24px;
+  margin-bottom: 30px;
+  }
 `;
 
 export const RecipeCard = styled.div`
-width:235px;
+width:100%;
  background-color: transparent;
 
 
@@ -28,6 +32,9 @@ width:235px;
 
   &:hover {
     transform: translateY(-5px);
+  }
+     @media screen and (min-width: 768px) {
+width:235px;
   }
 `;
 

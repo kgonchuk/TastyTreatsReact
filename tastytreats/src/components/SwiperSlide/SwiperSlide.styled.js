@@ -5,7 +5,7 @@ import color from "../../global/globalColors";
 export const SwiperContainer = styled.div`
   position: relative;
   overflow: hidden;
-  padding-left: 80px;
+  max-width:375px;
 
   .swiper-slide {
     width: auto;
@@ -17,22 +17,34 @@ export const SwiperContainer = styled.div`
     text-align: center;
   }
 
-  .swiper-pagination-bullet-active {
+ 
+
+  .swiper-pagination-bullet {
+    background: var(  --text-color);
+  }
+     .swiper-pagination-bullet-active {
     background: ${color.greenPrimary};
   }
+ @media screen and (min-width: 768px) {
+padding-left: 80px;
+}
 `;
 
 export const SmallCard = styled.div`
-  width: 137px;
-  height: 442px;
+  width: 80px;
+  height: 280px;
   border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
+   @media screen and (min-width: 768px) {
+ width: 137px;
+  height: 442px;
+}
 `;
 
 export const LargeCard = styled.div`
-  width: 351px;
-  height: 442px;
+  width: 200px;
+  height: 280px;
   border-radius: 16px;
   overflow: hidden;
   position: relative;
@@ -44,6 +56,11 @@ export const LargeCard = styled.div`
       rgba(0, 0, 0, 0.85) 65%,
       #000 100%
     );
+
+    @media screen and (min-width: 768px) {
+ width: 351px;
+  height: 442px;
+}
 `;
 
 export const Image = styled.img`
@@ -55,7 +72,10 @@ export const BigImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.5);
+  
+   @media screen and (min-width: 768px) {
+transform: scale(1.5);
+  }
 `;
 
 
@@ -77,12 +97,23 @@ export const Content = styled.div`
   color: white;
 
   h3 {
-    font-size: 20px;
+    font-size: 10px;
     margin-bottom: 8px;
   }
 
   p {
+    font-size: 8px;
+    opacity: 0.8;
+  }
+
+  @media screen and (min-width: 768px) {
+ h3 {
+    font-size: 20px;
+
+  }
+     p {
     font-size: 14px;
     opacity: 0.8;
+  }
   }
 `;

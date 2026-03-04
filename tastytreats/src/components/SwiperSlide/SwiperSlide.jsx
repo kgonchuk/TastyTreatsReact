@@ -62,7 +62,7 @@ export const RecipeSwiper = () => {
       <Swiper
         modules={[Pagination, Navigation]}
         slidesPerView={"auto"}
-        spaceBetween={24}
+        spaceBetween={8}
         loop={true}
         navigation={{
           prevEl: ".custom-prev",

@@ -25,10 +25,10 @@ const dispatch = useDispatch();
     <MainSection>
       <RecipesListContainer> 
      
-<RecipesWrap>
+   <RecipesWrap>
      <CategoriesFilter  />
      <PopupularRecipes />
-</RecipesWrap>
+   </RecipesWrap>
 
 <FilterContainer>
    <FilterBar areas={areas} ingredients={ingredients}/>

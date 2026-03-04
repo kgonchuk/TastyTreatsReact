@@ -14,8 +14,11 @@ export const RecipeImage = styled.img`
   width: 100%;
   height: 64px;
   width: 64px;
-  border-radius: 6px;
+  border-radius: 8px;
   object-fit: cover;
+   @media screen and (min-width: 768px) {
+  border-radius: 6px;
+  }
 `;
 export const RecipeContent = styled.div`
 display: flex;
@@ -30,14 +33,18 @@ export const RecipeTitle = styled.h3`
 text-transform: uppercase;
 margin-bottom: 8px;
   color:var(--popular-text);
+
 `;
 
 export const RecipeDescription = styled.p`
-  font-size: 14px;
+  font-size: 12px;
 fnt-weight: 400;
   color:var(--popular-text);
    display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+     @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
 `;          

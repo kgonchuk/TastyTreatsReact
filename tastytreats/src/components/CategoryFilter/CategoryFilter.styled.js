@@ -2,82 +2,58 @@ import styled from 'styled-components';
 import color from '../../global/globalColors';
 
 export const Wrapper = styled.div`
+
+
+@media screen and (min-width: 768px) {
   width: 235px;
   display: flex;
   flex-direction: column;
   gap: 16px;
 margin-top:25px;
-`;
-
-export const SearchInput = styled.input`
-  padding: 10px 14px;
-  border-radius: 24px;
-  border: 1px solid ${color.grayBorder};
-  font-size: 14px;
-
-  &:focus {
-    outline: none;
-    border-color: ${color.greenPrimary};
   }
+
+  @media screen and (min-width: 1280px) {
+
+  }
+
 `;
 
-// export const AllButton = styled.button`
-//   padding: 14px 28px;
-//   border-radius: 15px;
-//   font-size: 18px;
-//   font-weight: 500;
-
-//   // background-color: ${({ active }) => active ? "var(--category-hover-bg)" : "var(--category-bg)"};
-// background-color: ${({ active }) => active ? "var(--category-bg)" : "var(--category-hover-bg)"};
-
-
-//   // color: ${({ active }) => active ? "var(--category-hover-text)" : "var(--category-text)"};
-//     color: ${({ active }) => active ? "var(--category-text)" : "var(--category-hover-text)"};
-
-//   // border: 1px solid
-//   //   ${({ active }) => active ? "var(--category-hover-border)" : "var(--category-border)"};
-//     border: 1px solid
-//     ${({ active }) => active ? "var(--category-border)" : "var(--category-hover-border)"};
-
-//   transition: all 0.3s ease;
-
-//   &:hover {
-//     background-color: var(--category-hover-bg);
-
-//     color: var(--category-hover-text);
-//     border-color: var(--category-hover-border);
-//   }
-// `;
 
 export const AllButton = styled.button`
  padding: 14px 28px; 
 border-radius: 15px; 
 border: 1px solid ${color.grayBorder}; 
 background-color: ${({ active }) => active ? "transparent" : color.greenPrimary}; 
-// color: ${({ active }) => (active ? color.greySecondary : "#FFFFFF")}; 
 cursor: pointer; 
 border: 1px solid var(--border-color); 
 border-color: 1px solid ${({ active }) => (active ? color.greenPrimary : "#FFFFFF")}; 
-// color: #FFFFFF; 
-// color: ${({ active }) => (active ? "#05050580" : "#FFFFFF")}
 transition: all 0.3s ease; 
 font-size:18px; 
 font-weight:500; 
-color:var( --category-text); 
+color:var( --category-text);
+margin-bottom:24px;
 &:hover { 
-
 border-color: 1px solid ${color.greenPrimary}; 
-
 color:var( --category-text); 
+} 
+@media screen and (min-width: 768px) {
+  margin-bottom:0;
+  }
 
-} `;
+
+`;
 
 export const CategoriesList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 18px;
   max-height: 260px;
   overflow-y: auto;
+  height:198px;
+  @media screen and (min-width: 768px) {
+ height:100%;
+  gap: 10px;
+  }
 `;
 
 export const CategoryButton = styled.li`
