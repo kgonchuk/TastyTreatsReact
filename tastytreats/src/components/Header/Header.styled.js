@@ -41,25 +41,35 @@ export const NavLinks = styled.nav`
 
 export const HomeLink = styled(NavLink)`
   text-decoration: none;
-  color: var(--link-color);
+  color: #F8F8F8;
   transition: color 0.3s ease;
+  &.active {
+    color: #fff;
+  }
+ @media screen and (min-width: 768px) {
+     color: var(--link-color);
 
-  &:hover {
+ &:hover {
     color: var(--link-hover);
   }
 
   &.active {
     color: #9BB537;
   }
+
+  }
+    
 `;      
 export const FavoriteLink = styled(NavLink)`
 text-decoration: none;
-  color: var(--link-color);
-  &:hover {
-    
-  }
+  color: #F8F8F8;
+
    &.active {
-    color: ${color.greenPrimary};
+    color: #fff;
+  }
+
+   @media screen and (min-width: 768px) {
+     color: var(--link-color);
   }
 `;  
 export const TitleLink = styled(NavLink)`
@@ -145,6 +155,6 @@ padding:0;
 export const BurrgerIcon=styled.svg`
 width:24px;
 height:24px;
-color:${color.blackPrimary};
-stroke:${color.blackPrimary};
+color:var(  --text-color);
+stroke:var(  --text-color);
 `;

@@ -10,6 +10,7 @@ body {
 }
 :root {
  --bg-color: #ffffff; 
+ --bg-mobileMenu-color:#9BB537;
   --text-color: #000000; 
   --text-color-grey:#05050533;
   --card-bg: #f5f5f5;
@@ -51,6 +52,8 @@ body {
 
 [data-theme="dark"] {
  --bg-color: #050505e6;
+  --bg-mobileMenu-color:#050505e6;
+
   --text-color: #ffffff;
   --text-color-grey:#FFFFFF80;
   --card-bg: #1e1e1e;
