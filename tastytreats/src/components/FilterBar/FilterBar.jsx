@@ -37,7 +37,7 @@ export const FilterBar  = ({ areas, ingredients }) => {
             </CloseIconBtn>
           )}
         </SearchInputWrapper>
-<InputWrap>
+
 {/* Time */}
   <SelectTimeWrapper>
     <SelectLabel>Time</SelectLabel>
@@ -79,7 +79,7 @@ placeholder="Product"
     isClearable
   />
   </SelectIngredientsWrapper>
-</InputWrap>
+
  
 </FilterBarWrapper>
 

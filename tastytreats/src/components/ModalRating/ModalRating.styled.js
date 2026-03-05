@@ -18,33 +18,47 @@ export const ModalContent = styled.div`
 
     background-color: var( --bg-color);     
     border-radius: 8px;
-    padding: 32px;
+    padding: 20px;
 border:1px solid var( --border-rating-color);
-    width: 360px;
-    max-width: 600px;                   
+    width: 295px;
+    max-width: 335px;                   
     max-height: 80vh;
 z-index: 10000;
     overflow-y: auto; 
     position: relative; 
+    @media screen and (min-width: 768px) {
+    width: 360px;
+    max-width: 600px;                   
+    max-height: 80vh;
+    padding: 32px;
+  }
     `;
     
 export const CloseButton = styled.button`
     position: absolute; 
-    top: 10px;
-    right: 10px;
+    top: 14px;
+    right: 14px;
     background: transparent;
     border: none;
     font-size: 24px;
     cursor: pointer;
     color: var(--text-color);
+    width:20px;
+    height:20px;
+    @media screen and (min-width: 768px) {
+    top: 10px;
+    right: 10px;
+  }
     `;      
 export const RatingTitle = styled.h2`
-    font-size:18px;
+    font-size:14px;
     font-weight: 600;
-    margin-bottom: 14px;        
+    margin-bottom: 4px;        
      color: var(--text-color);
-
-    margin-bottom:16px
+     @media screen and (min-width: 768px) {
+   font-size:18px;
+    margin-bottom:16px;
+  }
     `;  
 export const StarsWrapper = styled.div`
 display: flex;
@@ -69,16 +83,19 @@ color: #fff;
 border: none;
 border-radius: 15px;
 cursor: pointer;
-margin-top:16px;
+margin-top:14px;
 width: 100%;
 &:hover {
   background-color:${color.greenHover};
 }
+   @media screen and (min-width: 768px) {
+margin-top:16px; 
+  }
 `;  
 
 
 export const RatingInput=styled.input`  
-width: 324px;    
+width: 256px;    
 padding: 14px 18px;
 border: 1px solid  var( --text-color-grey);
 background-color:transparent;
@@ -91,4 +108,7 @@ outline: none;
   outline: none;
   border-color: ${color.greenPrimary};
 }
+   @media screen and (min-width: 768px) {
+  width: 324px;  
+  }
 `;

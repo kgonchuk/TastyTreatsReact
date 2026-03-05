@@ -1,15 +1,19 @@
+
 import styled from "styled-components";
 import color from "../../global/globalColors";
 
 export const FilterBarContainer = styled.div`
+
 `;  
 export const FilterBarWrapper = styled.div` 
-
-   @media screen and (min-width: 768px) {
  display: flex;
-  gap: 16px;
-  align-items: flex-end;
+ flex-wrap:wrap;
+ gap:14px;
+   @media screen and (min-width: 768px) {
+
+
   }
+
   `;  
 export const SelectWrapper = styled.div` 
   display: flex;

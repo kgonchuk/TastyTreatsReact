@@ -16,7 +16,11 @@ grid-template-columns: repeat(3, 250px);
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+   display: grid;
+grid-template-columns: repeat(2, 240px);
+  gap: 16px; 
+ max-width: 496px; 
+  width: 100%;
   }
 
 `;      

@@ -1,10 +1,15 @@
 import { FavoriteImg, HeroFavoriteContainer } from "./HeroFavorite.styled";
-import hero from "../../images/hero.jpg"
+import herofavoriteMobile from "../../images/herofavoritemobile.jpg";
+import hero from "../../images/hero.jpg";
 
 export const HeroFavorite = () => {
   return (
     <HeroFavoriteContainer>
-      <FavoriteImg src={hero} alt="favorite" />
+      <picture>
+        <source srcSet={herofavoriteMobile} media="(max-width: 767px)" />
+        <source srcSet={hero} media="(min-width: 768px)" />
+        <FavoriteImg src={hero} alt="favorite" />
+      </picture>
     </HeroFavoriteContainer>
   );
 };

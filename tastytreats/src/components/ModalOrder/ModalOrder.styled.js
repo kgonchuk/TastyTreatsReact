@@ -17,11 +17,14 @@ export const ModalOverlay = styled.div`
 export const ModalContent = styled.div`
 position: relative;
   background-color: var(--bg-color);
-  padding: 40px;
+  padding: 28px 20px;
   border-radius: 15px;
-  // width: 440px;
-    max-width: 90%;
+  width: 295px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  @media screen and (min-width: 768px) {
+padding: 40px;
+  max-width: 90%;
+  }
 `;
 
 
@@ -30,14 +33,17 @@ font-size: 18px;
 font-weight: 600;
 line-height: 1.22;
 color: var(--text-color);
-margin-bottom: 40px;
+margin-bottom: 28px;
 text-transform: uppercase;
+ @media screen and (min-width: 768px) {
+margin-bottom: 40px;
+  }
 `;
 
 export const CloseButton = styled.button`
 position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 14px;
+  right: 14px;
   background: none;
   border: none;
   font-size: 1.5em;
@@ -45,9 +51,13 @@ position: absolute;
 
 `;
 export const CloseIcon = styled.svg`
+  width: 20px;
+  height: 20px;
+  fill: var(--text-color);
+  @media screen and (min-width: 768px) {
   width: 1em;
   height: 1em;
-  fill: var(--text-color);
+  }
 `;
 
 export const ModalBody = styled.div`
@@ -66,23 +76,28 @@ margin-bottom: 8px;
 
 `;
 export const Input = styled.input`
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   border: 1px solid ${color.greyPrimary};
   border-radius: 15px;
   font-size: 1em;
   height: 48px;
   background-color:transparent;
+   @media screen and (min-width: 768px) {
+  margin-bottom: 18px;
+  }
 `;
 
 export const TextArea = styled.textarea`
   padding: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 40px;
   border: 1px solid ${color.greyPrimary};
   border-radius: 15px;
   font-size: 1em;
   resize: vertical;
   background-color:transparent;
-  
+    @media screen and (min-width: 768px) {
+  margin-bottom: 15px;
+  }
 `;
 
 export const SubmitButton = styled.button`

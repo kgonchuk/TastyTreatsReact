@@ -12,8 +12,17 @@ export const RecipeCard = styled.article`
  width: 303px;
   height: 303px;
   border-radius: 8px;
+  margin-bottom: 24px;
    @media screen and (min-width: 768px) {
+ margin-bottom: 0;
+   width: 208px;
+  height: 232px;
+   border-radius: 8px;
+  }
 
+
+  @media screen and (min-width: 1280px) {
+ margin-bottom: 0;
    width: 218px;
   height: 287px;
    border-radius: 12px;

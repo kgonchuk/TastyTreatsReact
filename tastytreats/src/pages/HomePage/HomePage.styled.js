@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const HomePageContainer = styled.div`
-// padding:0 0 0 20px;
+
 @media screen and (min-width: 768px) {
-padding:0 0 0 100px;
+// padding:0 0 0 100px;
   
   }
 
@@ -14,9 +14,9 @@ export const MainSection = styled.section`
 `;  
 export const RecipesListContainer = styled.div`
 
- @media screen and (min-width: 768px) {
-   display: flex;
-gap: 64px;
+   @media screen and (min-width: 768px) {
+display:flex;
+gap:32px;
   }
 
   @media screen and (min-width: 1280px) {

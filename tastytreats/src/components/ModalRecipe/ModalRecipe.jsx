@@ -1,10 +1,10 @@
-import { AddButton, ButtonWrapper, CloseButton, IngredientItem, IngredientsList, InstructionText, ModalContent, ModalOverlay, RatingButton, RatingWrapper, RecipeCardHeader, RecipeCategory, RecipeDetails, RecipeHeaderInfo, RecipeImage, RecipeRating, RecipeRatingStar, RecipeTime, RecipeTitle, SectionTitle, VideoWrapper } from "./ModalRecipe.styled"
-import sprite from '../../assets/sprite.svg';
+import { AddButton, ButtonWrapper, CloseButton, EmptyHeartIcon, FillHeartIcon, IngredientItem, IngredientsList, InstructionText, ModalContent, ModalOverlay, RatingButton, RatingWrapper, RecipeCardHeader, RecipeCategory, RecipeDetails, RecipeHeaderInfo, RecipeImage, RecipeRating, RecipeRatingStar, RecipeTime, RecipeTitle, SectionTitle, VideoWrapper } from "./ModalRecipe.styled"
 import { useDispatch, useSelector } from "react-redux";
 import ReactStars from "react-stars";
 import { useState } from "react";
 import { ModalRating } from "../ModalRating/ModalRating";
 import { toggleFavorite } from "../../redux/favorites/favoritesSlice";
+
 
 
 
@@ -69,9 +69,8 @@ const toggleFavorites = () => {
         <RecipeCardHeader>
           <RecipeCategory>#{category}</RecipeCategory>
           
-          <RecipeHeaderInfo>
-             <RatingWrapper>
-        
+     <RecipeHeaderInfo>
+          <RatingWrapper>
             <RecipeRating>{roundToHalf(rating).toFixed(1)}</RecipeRating>
             <ReactStars
   count={5}
@@ -81,7 +80,6 @@ const toggleFavorites = () => {
   isHalf={true}
   activeColor="#FFC107"
 />
-
           </RatingWrapper>
          
             <RecipeTime>{time} min</RecipeTime>
@@ -103,10 +101,11 @@ const toggleFavorites = () => {
         </RecipeDetails>
        
    <ButtonWrapper>
-   
-             <AddButton type="button" onClick={toggleFavorites}>
-              {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
-             </AddButton>
+   <AddButton type="button" onClick={toggleFavorites}>
+  {isFavorite ? "Remove from " : "Add to "}
+  {isFavorite ? <FillHeartIcon /> : <EmptyHeartIcon />}
+</AddButton>
+
             
 
    

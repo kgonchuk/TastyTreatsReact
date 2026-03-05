@@ -10,7 +10,7 @@ export const FavoriteCategoryList = styled.ul`
   padding: 0;
   display: flex;
   overflow-x: auto;
-  gap: 15px;
+  gap: 12px;
   scrollbar-width: thin;
   scrollbar-color: ${color.grayBorder} transparent;
 
@@ -27,10 +27,16 @@ export const FavoriteCategoryList = styled.ul`
   &::-webkit-scrollbar-track {
     background-color: transparent;
   }
+   @media screen and (min-width: 768px) {
+ gap: 15px;
+  }
 `;
 
 export const FavoriteCategoryItem = styled.li`
+  margin-bottom: 24px;
+   @media screen and (min-width: 768px) {
   margin-bottom: 10px;
+  }
 `;
 
 export const FavoriteCategoryButton = styled.button`

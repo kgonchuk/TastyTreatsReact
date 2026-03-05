@@ -7,6 +7,10 @@ margin-top:40px;
  @media screen and (min-width: 768px) {
 margin-top:64px;
   }
+   @media screen and (min-width: 768px) {
+width:176px;
+  margin-top:64px;
+  }
 `;
 
 export const SectionTitle = styled.h2`
@@ -17,8 +21,9 @@ export const SectionTitle = styled.h2`
   margin-bottom: 20px;
   color:var(--popular-text);
   @media screen and (min-width: 768px) {
-  font-size: 24px;
+  font-size: 18px;
   margin-bottom: 30px;
+  
   }
 `;
 

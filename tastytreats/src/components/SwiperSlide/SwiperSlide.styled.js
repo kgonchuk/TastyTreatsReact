@@ -26,7 +26,7 @@ export const SwiperContainer = styled.div`
     background: ${color.greenPrimary};
   }
  @media screen and (min-width: 768px) {
-padding-left: 80px;
+
 }
 `;
 

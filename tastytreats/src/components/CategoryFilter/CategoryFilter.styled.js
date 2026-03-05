@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
 
 
 @media screen and (min-width: 768px) {
-  width: 235px;
+  width: 176px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -13,7 +13,7 @@ margin-top:25px;
   }
 
   @media screen and (min-width: 1280px) {
-
+width: 235px;
   }
 
 `;
@@ -38,6 +38,7 @@ color:var( --category-text);
 } 
 @media screen and (min-width: 768px) {
   margin-bottom:0;
+  width:176px;
   }
 
 
@@ -52,7 +53,11 @@ export const CategoriesList = styled.ul`
   height:198px;
   @media screen and (min-width: 768px) {
  height:100%;
-  gap: 10px;
+  gap: 24px;
+
+  @media screen and (min-width: 1280px) {
+   gap: 10px;
+  }
   }
 `;
 

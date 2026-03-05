@@ -10,6 +10,11 @@ padding-bottom: 80px;
 
 export const HeroTextBlock = styled.div`
 max-width: 100%;
+
+  @media screen and (min-width: 768px) {
+ margin-bottom:64px;
+    width:446px;
+  }
 `;  
 
 export const HeroTitle = styled.h1`
@@ -26,6 +31,7 @@ font-size: 26px;
   @media screen and (min-width: 768px) {
     font-size: 36px;
     margin-bottom: 16px;
+    width:446px;
   }
 
   @media screen and (min-width: 1280px) {
@@ -72,12 +78,12 @@ width: 100%;
   margin-top: 48px;
 
   @media screen and (min-width: 768px) {
-    width: 702px;
+    // width: 702px;
     margin-top: 0;
   }
 
   @media screen and (min-width: 1280px) {
-    width: 800px;
+    // width: 800px;
   }
 
 `;    
@@ -86,6 +92,9 @@ export const HeroWrapper = styled.div`
   flex-direction: column;
 
   @media screen and (min-width: 768px) {
+  
+  }
+      @media screen and (min-width: 1280px) {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;

@@ -74,7 +74,7 @@ export const MobileNav = styled.nav`
   margin-left:54px;
 `;
 export const ToggleSwitchWrapMobile=styled.div`
-margin-top:400px;
+margin-top:300px;
  @media screen and (min-width: 320px) and (max-width: 375px) {
  
   }

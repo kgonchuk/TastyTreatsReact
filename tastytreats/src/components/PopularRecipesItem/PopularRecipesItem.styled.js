@@ -1,5 +1,4 @@
 import styled from "styled-components"; 
-import color from "../../global/globalColors";
 
 export const RecipesGrid = styled.div`
 display : flex; 
@@ -7,7 +6,10 @@ display : flex;
     gap: 16px;
     overflow-x: auto;
     margin-bottom: 35px;   
-
+   @media screen and (min-width: 768px) {
+   gap: 8px;
+   width:176px;
+  }
 `;
 
 export const RecipeImage = styled.img`
@@ -18,6 +20,8 @@ export const RecipeImage = styled.img`
   object-fit: cover;
    @media screen and (min-width: 768px) {
   border-radius: 6px;
+   height: 48px;
+  width: 48px;
   }
 `;
 export const RecipeContent = styled.div`
@@ -33,7 +37,10 @@ export const RecipeTitle = styled.h3`
 text-transform: uppercase;
 margin-bottom: 8px;
   color:var(--popular-text);
+@media screen and (min-width: 768px) {
 
+  
+  }
 `;
 
 export const RecipeDescription = styled.p`
@@ -45,6 +52,9 @@ fnt-weight: 400;
   -webkit-box-orient: vertical;
   overflow: hidden;
      @media screen and (min-width: 768px) {
-    font-size: 14px;
+    font-size: 10px;
+  }
+     @media screen and (min-width: 1280px) {
+font-size: 14px;
   }
 `;          

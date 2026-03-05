@@ -140,10 +140,10 @@ gap:24px
 export const ToggleSwitchWrap=styled.div`
 display:none;
  @media screen and (min-width: 320px) and (max-width: 375px) {
- 
+
   }
    @media screen and (min-width: 768px) {
-  font-size: 18px;
+ display:flex;
   }
 `;
 export const MobileMenuBtn=styled.button`
